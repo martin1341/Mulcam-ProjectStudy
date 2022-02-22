@@ -1,69 +1,128 @@
+@charset "UTF-8";
+
 * {
     margin: 0px;
     padding: 0px;
 }
 
-body {
+html, body {
     height: 100%;
-    padding-top: 70px;
+    overflow-y: overlay;
 }
 
-header {
-    background: white;
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    height: 70px;
-    border-bottom: 1px #eeeeee solid;
-}
-
-#menu-wrap {
-    width: 940px;
-    height: 70px;
+/* 공통 상단 부분 */
+#top {
+    height: 50px;
+    width: 800px;
     margin: 0 auto;
 }
 
-#menu-logo {
-    float: left;
+#top>a {
+    text-decoration: none;
+    color: black;
 }
 
-#menu-member {
-    float: right;
-    padding-right: 15px;
+#main {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 200%;
 }
 
-#menu-member-list li {
+.sign {
     float: right;
-    width: 70px;
-    height: 70px;
-    line-height: 70px;
-    font-weight: bold;
+    text-align: right;
+}
+
+/* 본문 */
+
+.hr-article {
+    border: none;
+    height: 50px;
+}
+
+#banner {
+    width: 800px;
+    height: 450px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#banner-list {
     list-style: none;
 }
 
-#menu-member-list li a {
-    color: #444444;
+.banner-item {
+    float: left;
+    margin: 0px;
+}
+
+#today {
+    width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#today-wrap span {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+#today-wrap ul {
+    list-style: none;
+}
+
+#today-wrap ul li {
+    float: left;
+    width: 260px;
+    height: 260px;
+    margin-right: 10px;
+}
+
+#today-wrap ul li:nth-child(3n) {
+    margin-right: 0px;
+}
+
+#today-wrap ul li a {
     text-decoration: none;
+    color: #444444;
 }
 
-footer {
-    background: #444444;
-    bottom: 0px;
-    width: 100%;
-    height: 70px;
+.today-image {
+    width: 260px;
+    height: 200px;
 }
 
-#footer-wrap {
-    width: 940px;
-    line-height: 70px;
+.today-content {
+    height: 50px;
+}
+
+.today-content p {
+    width: 260px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.today-content p:first-child {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.today-content p:last-child {
+    color: #999999;
+}
+
+/* 공통 하단 부분 */
+#bottom {
+    background-color: #e9e9e9;
+    border: 3px solid #e9e9e9;
+    width: 800px;
+    height: 80px;
     margin: 0 auto;
 }
 
-#footer-team {
-    float: right;
-    padding-right: 15px;
-}
-
-#footer-team span {
-    color: white;
+#bottom>p {
+    font-size: 40%;
+    text-align: center;
 }
