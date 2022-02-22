@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+/* 공통 상단 부분 */
+#top {
+	height: 50px;
+	width: 800px;
+	margin: 0 auto;
+}
+
+#top > a{ 
+	text-decoration: none;
+	color : black;
+}
+
+#main {
+	font-family : 'Black Han Sans', sans-serif;
+	font-size: 200%;
+}
+
+.sign {
+	float: right;
+	text-align: right;
+}
+
+/* 중간 로그인 페이지 부분 */
+
+
+#title {
+	text-align: center;
+	font-family : 'Black Han Sans', sans-serif;
+	font-size:170%;
+	margin: 20px;
+}
+
+form{
+	text-align: center;
+	margin : 50px auto;
+}
+
+
+
+#loginbtn {
+	width:180px;
+	background-color: #666673;
+	color : white;
+}
+
+/* 공통 하단 부분 */
+#bottom {
+	background-color: #e9e9e9;
+	border : 3px solid #e9e9e9;
+	width : 800px;
+	height: 80px;
+	margin: 0 auto;
+}
+
+#bottom > p {
+	font-size: 40%;
+	text-align: center;
+}
