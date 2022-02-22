@@ -47,6 +47,7 @@ html, body {
 }
 
 #banner-list {
+    width: 3200px;
     list-style: none;
 }
 
