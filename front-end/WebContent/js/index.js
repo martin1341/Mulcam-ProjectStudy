@@ -6,21 +6,21 @@ window.onload = function () {
     banner.prepend(last);
 
     let current = 1;
-    let width = first.width();
+    let width = Math.ceil(first.width());
     banner.css("transform", "translateX(" + -width * current + "px)");
 
     function slide() {
         setInterval(function () {
-            banner.css("transition", "2s");
-            banner.css("transform", "translateX(-" + width * current + "px)");
             current++;
+            banner.css("transition", "2s");
+            banner.css("transform", "translateX(" + -width * current + "px)");
 
             if (current === 3) {
                 setTimeout(function () {
                     banner.css("transition", "0s");
-                    banner.css("transform", "translate3d(0px, 0px, 0px");
+                    banner.css("transform", "translateX(" + -width + "px)");
                 }, 2001)
-                current = 0;
+                current = 1;
             }
         }, 5000);
     }
