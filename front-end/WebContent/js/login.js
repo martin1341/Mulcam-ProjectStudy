@@ -1,24 +1,38 @@
-window.onload = function(e){ 
+window.onload = function () {
 
-	var loginbtn = document.getElementById('loginbtn');
-	var id = document.getElementById('id');
-	var pw = document.getElementById('pw');
+	var member = {
+		"admin": "1234",
+		"first": "1111"
+	};
 
-	$("form").on('submit',function(e){
-		if(id.value == "" || id.value == "아이디"){
+	$("form").on('submit', function (e) {
+		var isOk = true;
+
+		if ($("#id").val() == "") {
 			e.preventDefault();
-			alert("아이디를 입력해주세요");
-			
+			isOk = false;
+			$("#iderror").text("아이디를 입력해주세요.");
+
+		} else {
+			$("#iderror").text("");
 		}
-		if(pw.value == "" || pw.value == "비밀번호"){
+
+		if ($("#pw").val() == "") {
 			e.preventDefault();
-			alert("비밀번호를 입력해주세요");
+			isOk = false;
+			$("#passerror").text("비밀번호를 입력해주세요.");
+		} else {
+			$("#passerror").text("");
 		}
-		if(id.value == "manager" || pw.value == "manager"){
-			alert("로그인 되었습니다")
+
+		if (isOk) {
+			if (typeof member[$("#id").val()] == "undefined") {
+				e.preventDefault();
+				alert("등록되지 않은 아이디입니다.");
+			} else if ($("#pw").val() != member[$("#id").val()]) {
+				e.preventDefault();
+				alert("잘못된 비밀번호입니다.");
+			}
 		}
-		
 	});
-	
-
 }

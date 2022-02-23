@@ -1,117 +1,124 @@
-// 휴대폰번호 입력
-function changePhone1(){
-  const phone1 = document.getElementById("phone1").value // 010
-  if(phone1.length !== 3){
-    document.getElementById("phoneError").innerHTML = "핸드폰 번호가 올바르지 않습니다."
-  }
-  else{
-    document.getElementById("phone2").focus();
-  }
-}
-function changePhone2(){
-  const phone2 = document.getElementById("phone2").value // 1234
-  if(phone2.length !== 4){
-    document.getElementById("phoneError").innerHTML = "핸드폰 번호가 올바르지 않습니다."
-  }
-  else{
-    document.getElementById("phone3").focus();
-  }
-}
-function changePhone3(){
-  const phone3 = document.getElementById("phone3").value // 5678
-  if(phone3.length !== 4){
-    document.getElementById("phoneError").innerHTML = "핸드폰 번호가 올바르지 않습니다."
-  }
-  else{
-    document.getElementById("phoneError").innerHTML = ""
-  }
-}
+window.onload = function () {
 
+	var member = ["admin", "first"];
 
-// 가입부분 체크
-function signUpCheck(){
+	$("form").on("submit", function (e) {
+		var isOk = true;
 
-let email = document.getElementById("email").value
-let name = document.getElementById("name").value
-let password = document.getElementById("password").value
-let passwordCheck = document.getElementById("passwordCheck").value
-let area = document.getElementById("area").value
-let gender_man = document.getElementById("gender_man").checked
-let gender_woman = document.getElementById("gender_woman").checked
-let check = true;
+		if ($("#id").val() == "") {
+			e.preventDefault();
+			isOk = false;
+			$("#idError").text("아이디를 입력해주세요.");
+		} else if (!$("#id").val().match(/^[a-zA-Z0-9]{3,}$/)) {
+			e.preventDefault();
+			isOk = false;
+			$("#idError").text("알파벳과 숫자의 조합으로 3자 이상 입력해주세요.");
+		} else {
+			$("#idError").text("");
+			if (member.includes($("#id").val())) {
+				e.preventDefault();
+				isOk = false;
+				$("#idError").text("이미 사용중인 아이디입니다.");
+			}
+		}
 
-  // 이메일확인
-  if(email.includes('@')){
-    let emailId = email.split('@')[0]
-    let emailServer = email.split('@')[1]
-    if(emailId === "" || emailServer === ""){
-      document.getElementById("emailError").innerHTML="이메일이 올바르지 않습니다."
-      check = false
-    }
-    else{
-      document.getElementById("emailError").innerHTML=""
-    }
-  }else{
-    document.getElementById("emailError").innerHTML="이메일이 올바르지 않습니다."
-    check = false
-  }
-  
-// 이름확인
-if(name===""){
-  document.getElementById("nameError").innerHTML="이름이 올바르지 않습니다."
-  check = false
-}else{
-  document.getElementById("nameError").innerHTML=""
-}
+		if ($("#pw").val() == "") {
+			e.preventDefault();
+			isOk = false;
+			$("#passwordError").text("비밀번호를 입력해주세요.");
+		} else if (!$("#pw").val().match(/^.{4,10}$/)) {
+			e.preventDefault();
+			isOk = false;
+			$("#passwordError").text("4자 이상 10자 이하로 입력해주세요.");
+		} else {
+			$("#passwordError").text("");
+			if ($("#pwchk").val() == "") {
+				e.preventDefault();
+				isOk = false;
+				$("#passwordCheckError").text("비밀번호를 다시 입력해주세요.");
+			} else if ($("#pwchk").val() != $("#pw").val()) {
+				e.preventDefault();
+				isOk = false;
+				$("#passwordCheckError").text("비밀번호가 같지 않습니다.");
+			} else {
+				$("#passwordCheckError").text("");
+			}
+		}
 
-// 비밀번호 확인
-if(password !== passwordCheck){
-  document.getElementById("passwordError").innerHTML=""
-  document.getElementById("passwordCheckError").innerHTML="비밀번호가 동일하지 않습니다."
-  check = false
-}else{
-  document.getElementById("passwordError").innerHTML=""
-  document.getElementById("passwordCheckError").innerHTML=""
-}
+		if ($("#name").val() == "") {
+			e.preventDefault();
+			isOk = false;
+			$("#nameError").text("이름을 입력해주세요.");
+		} else if (!$("#name").val().match(/^[가-힣]{2,}$/)) {
+			e.preventDefault();
+			isOk = false;
+			$("#nameError").text("한글로 2자 이상 입력해주세요.");
+		} else {
+			$("#nameError").text("");
+		}
 
-if(password===""){
-  document.getElementById("passwordError").innerHTML=""
-  check = false
-}
-if(passwordCheck===""){
-  document.getElementById("passwordCheckError").innerHTML=""
-  check = false
-}else{
-  document.getElementById("passwordCheckError").innerHTML="비밀번호가 일치하지 않습니다."
-}
+		if ($("#email").val() == "") {
+			e.preventDefault();
+			isOk = false;
+			$("#emailError").text("이메일을 입력해주세요.");
+		} else if (!$("#email").val().match(/^[a-zA-Z0-9+\-_.]+@[a-zA-Z0-9+\-_]+\.[a-zA-Z0-9.]+$/)) {
+			e.preventDefault();
+			isOk = false;
+			$("#emailError").text("이메일 형식에 맞게 입력해주세요.");
+		} else {
+			$("#emailError").text("");
+		}
 
-// 지역선택 확인
-if(area === "지역을 선택하세요."){
-  document.getElementById("areaError").innerHTML="지역을 선택해주세요."
-  check = false
-}else{
-  document.getElementById("areaError").innerHTML=""
-}
+		if ($("#phone1").val() == "" || $("#phone2").val() == "" || $("#phone3").val() == "") {
+			e.preventDefault();
+			isOk = false;
+			$("#phoneError").text("휴대전화번호를 입력해주세요.");
+		} else if (!$("#phone1").val().match(/^01[0-9]$/)) {
+			e.preventDefault();
+			isOk = false;
+			$("#phoneError").text("휴대전화번호 형식에 맞게 입력해주세요.");
+		} else if (!$("#phone2").val().match(/^[0-9]{3,4}$/)) {
+			e.preventDefault();
+			isOk = false;
+			$("#phoneError").text("휴대전화번호 형식에 맞게 입력해주세요.");
+		} else if (!$("#phone3").val().match(/^[0-9]{4}$/)) {
+			e.preventDefault();
+			isOk = false;
+			$("#phoneError").text("휴대전화번호 형식에 맞게 입력해주세요.");
+		} else {
+			$("#phoneError").text("");
+		}
 
+		if ($("#area").val() == null) {
+			e.preventDefault();
+			isOk = false;
+			$("#areaError").text("지역을 선택해주세요.");
+		} else {
+			$("#areaError").text("");
+		}
 
-// 성별체크확인
-if(!gender_man && !gender_woman){
-  document.getElementById("genderError").innerHTML="성별을 선택해주세요."
-  check = false
-}else{
-  document.getElementById("genderError").innerHTML=""
-}
+		if ($("#gender").val() == null) {
+			e.preventDefault();
+			isOk = false;
+			$("#genderError").text("성별을 선택해주세요.");
+		} else {
+			$("#genderError").text("");
+		}
 
-if(check){
-  document.getElementById("emailError").innerHTML=""
-  document.getElementById("nameError").innerHTML=""
-  document.getElementById("passwordError").innerHTML=""
-  document.getElementById("passwordCheckError").innerHTML=""
-  document.getElementById("areaError").innerHTML=""
-  document.getElementById("genderError").innerHTML=""
+		if (isOk) {
+			alert("회원가입이 완료되었습니다.");
+		}
+	});
 
-  setTimeout(function() {
-    alert("가입이 완료되었습니다.") } ,0
-  );
-}
+	$("#phone1").on("input", function () {
+		if ($(this).val().length == 3) {
+			$("#phone2").focus();
+		}
+	});
+
+	$("#phone2").on("input", function () {
+		if ($(this).val().length == 4) {
+			$("#phone3").focus();
+		}
+	});
 }
