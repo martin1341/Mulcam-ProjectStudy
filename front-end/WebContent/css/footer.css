@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+
+/* 공통 하단 부분 */
+#bottom {
+    background-color: #e9e9e9;
+    width: 800px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+#bottom-wrap {
+    margin: 0 auto;
+    width: 800px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+#bottom-logo {
+    float: left;
+    width: 150px;
+    height: 50px;
+    line-height: 55px;
+    text-align: center;
+    margin-right: 30px;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 200%;
+    color: #999999;
+}
+
+#bottom span {
+    float: left;
+    font-size: 70%;
+    margin-right: 30px;
+}

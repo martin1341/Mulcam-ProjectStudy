@@ -19,7 +19,7 @@ window.onload = function () {
                 setTimeout(function () {
                     banner.css("transition", "0s");
                     banner.css("transform", "translateX(" + -width + "px)");
-                }, 2001)
+                }, 2000)
                 current = 1;
             }
         }, 5000);
