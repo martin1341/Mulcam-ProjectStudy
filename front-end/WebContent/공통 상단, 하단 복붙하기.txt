@@ -40,27 +40,80 @@ login.html파일에서 아래 내용 복붙하기!
 login.css 파일에서 아래 내용 복붙하기!
 
 /* 공통 상단 부분 */
-#top {
-	height: 50px;
-	width: 800px;
-	margin: 0 auto;
+body {
+    padding-top: 51px;
 }
 
-#top > a{ 
-	text-decoration: none;
-	color : black;
+#menu {
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    background: white;
+    border-bottom: 1px solid #eeeeee;
+    z-index: 999;
 }
 
-#main {
-	font-family : 'Black Han Sans', sans-serif;
-	font-size: 200%;
+#menu a {
+    text-decoration: none;
+    color: black;
 }
 
-.sign {
-	float: right;
-	text-align: right;
+#menu ul {
+    list-style: none;
 }
 
+#menu-wrap {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#logo {
+    float: left;
+    height: 50px;
+    text-align: left;
+    line-height: 55px;
+    margin-right: 50px;
+}
+
+#logo a {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 200%;
+}
+
+#quick {
+    float: left;
+}
+
+#quick li {
+    float: left;
+    width: 100px;
+    height: 50px;
+    text-align: left;
+    line-height: 50px;
+}
+
+#quick a {
+    font-weight: bold;
+    font-size: 100%;
+}
+
+#member {
+    float: right;
+}
+
+#member li {
+    float: right;
+    width: 80px;
+    height: 50px;
+    text-align: right;
+    line-height: 50px;
+}
+
+#member a {
+    font-weight: lighter;
+    font-size: 90%;
+}
 
 /* 공통 하단 부분 */
 #bottom {
