@@ -1,81 +1,96 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <title>회원가입 페이지</title>
-        
-        <link href="" rel=""/>
-        <script src="signup.js"></script>
 
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>어디갈까?</title>
+    <!-- 웹폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- CSS, JavaScript -->
+    <link rel="stylesheet" href="css/signup.css">
+    <script src="js/signup.js"></script>
+</head>
 
-    <body>
-        <section class="wrap">
-            <div class='title'><h1 style="font-size: 30px">회원가입</h1></div>
-            <form action="#" method="post">
-                <div class="email">
-                    <input type="email" name="email" id="email" placeholder="이메일을 입력하세요"
-                    autocomplete="off" required>
-                    <label for="email">이메일<br></label>
-                    <div id="emailError" class="error"></div>
-                </div>
-                <div class="name">
-                    <input type="text" name="name" id="name" placeholder="이름을 입력하세요"
-                    autocomplete="off" required>
-                    <label for="name">이름<br></label>
-                    <div id="nameError" class="error"></div>
-                </div>
-                <div class="password">
-                    <input type="password" name="pw" id="pw" placeholder="비밀번호를 입력하세요"
-                    autocomplete="off" required>
-                    <label for="pw">비밀번호<br></label>
-                    <div id="passwordError" class="error"></div>
-                </div>
-                <div class="passwordCheck">
-                    <input type="password" name="pw" id="pw" placeholder="비밀번호를 다시 입력하세요"
-                    autocomplete="off" required>
-                    <label for="pw">비밀번호 재확인<br></label>
-                    <div id="passwordCheckError" class="error"></div>
-                </div>
-                <div class="phone">
-                    <input id="phone1" type="text" size="1" maxlength="3" oninput="changePhone1()"> -
-                    <input id="phone2" type="text" size="3" maxlength="4" oninput="changePhone2()"> -
-                    <input id="phone3" type="text" size="3" maxlength="4" oninput="changePhone3()">
-                    <label for="phone">휴대전화</label>
-                </div>
-                <div class="area">
-                    <select id="area">
-                        <option selected disabled>지역을 선택하세요.</option>
-                        <option>서울</option>
-                        <option>경기</option>
-                        <option>경남</option>
-                        <option>경북</option>
-                        <option>강원</option>
-                        <option>충남</option>
-                        <option>충북</option>
-                        <option>전북</option>
-                        <option>전남</option>
-                        <option>제주</option>
-                    </select>
-                    <div id="areaError" class="error"></div>
-                </div>
-                <div class="gender">
-                    <input id="gender_man" type="radio" name="gender">남성  
-                    <input id="gender_woman" type="radio" name="gender">여성
-                    <div id="genderError" class="error"></div>
-                </div>
+<body>
+    <!-- 공통 상단 부분-->
+    <header id="menu">
+        <div id="menu-wrap">
+            <div id="logo">
+                <a href="index.html">어디갈까?</a>
+            </div>
+            <div id="quick">
+                <ul>
+                    <li><a href=#>국내여행</a></li>
+                    <li><a href=#>해외여행</a></li>
+                </ul>
+            </div>
+            <div id="member">
+                <ul>
+                    <li><a href="signup.html">회원가입</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
 
+    <article id="signup">
+        <div id="title">
+            <p>회원가입</p>
+        </div>
+        <form action="#" method="post">
+            <div class="id">
+                <label>아이디<br>
+                    <input type="text" name="id" id="id" class="textform" placeholder="영문, 숫자">
+                </label>
+                <div id="emailError" class="error"></div>
+            </div>
+            <div class="password">
+                <label>비밀번호<br>
+                    <input type="password" name="pw" id="pw" class="textform" placeholder="6글자 이상">
+                </label>
+                <div id="passwordError" class="error"></div>
+            </div>
+            <div class="passwordCheck">
+                <label>비밀번호 재확인<br>
+                    <input type="password" name="pw" id="pw" class="textform" placeholder="6글자 이상">
+                </label>
+                <div id="passwordCheckError" class="error"></div>
+            </div>
+            <div class="name">
+                <label>이름<br>
+                    <input type="text" name="name" id="name" class="textform" placeholder="한글 2글자 이상">
+                </label>
+                <div id="nameError" class="error"></div>
+            </div>
+            <div class="email">
+                <label>이메일<br>
+                    <input type="email" name="email" id="email" class="textform" placeholder="abc@email.com">
+                </label>
+                <div id="emailError" class="error"></div>
+            </div>
+            <div class="phone">
+                <label>휴대폰 번호<br>
+                    <input type="tel" name="phone" id="phone" class="textform" placeholder="010-1234-5678">
+                </label>
+                <div id="phoneError" class="error"></div>
+            </div>
+            <div class="btn-area">
+                <button type="submit" id="join">가입하기</button>
+            </div>
+        </form>
+    </article>
 
-                <div class="btn-area">
-                    <button type="submit">가입하기</button>
-                </div>
-
-            </form>
-        </section>
-
-
-    </body>
-
-
+    <!-- 공통 하단 부분 -->
+    <footer id=bottom>
+        <p>(주)어디갈까 | 대표: 7조 | 주소: 서울특별시 강남구 언주로 508 서울상록빌딩</p>
+        <p>개인정보 보호책임자: 신미래 | 팩스: 02-123-4567 | 이메일 7jo@email.com</p>
+        <p>※어디갈까는 여행 정보를 제공해주는 업체로서 항공권, 여행 상품 등의 판매는 진행되지 않습니다</p>
+    </footer>
+</body>
 
 </html>
