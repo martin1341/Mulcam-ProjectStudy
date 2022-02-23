@@ -99,12 +99,12 @@ body {
     overflow: hidden;
 }
 
-#banner ul {
+#banner-list {
     width: 3200px;
     list-style: none;
 }
 
-#banner li {
+.banner-item {
     float: left;
     margin: 0px;
 }
@@ -115,29 +115,30 @@ body {
     overflow: hidden;
 }
 
-#today span {
+#today-wrap span {
+    display: block;
     height: 50px;
     line-height: 50px;
-    font-size: 150%;
+    font-size: 1.8em;
     font-weight: bold;
 }
 
-#today ul {
+#today-wrap ul {
     list-style: none;
 }
 
-#today li {
+#today-wrap ul li {
     float: left;
     width: 260px;
     height: 260px;
     margin-right: 10px;
 }
 
-#today li:nth-child(3n) {
+#today-wrap ul li:nth-child(3n) {
     margin-right: 0px;
 }
 
-#today a {
+#today-wrap ul li a {
     text-decoration: none;
     color: #444444;
 }
@@ -145,8 +146,6 @@ body {
 .today-image {
     width: 260px;
     height: 200px;
-    border-radius: 5%;
-    overflow: hidden;
 }
 
 .today-content {

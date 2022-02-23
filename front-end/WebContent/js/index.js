@@ -1,8 +1,8 @@
 window.onload = function () {
-    let banner = $("#banner ul");
-    let first = $("#banner li:first-child").clone();
+    let banner = $("#banner-list");
+    let first = $("#banner-list li:first-child").clone();
     banner.append(first);
-    let last = $("#banner li:last-child").clone();
+    let last = $("#banner-list li:last-child").clone();
     banner.prepend(last);
 
     let current = 1;
