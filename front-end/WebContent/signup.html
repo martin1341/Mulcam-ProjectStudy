@@ -42,49 +42,42 @@
 
     <section class="wrap">
         <div class='title'>회원가입</div>
-        <form action="#" method="post">
+        <form action="index.html" method="post">
             <div class="id">
                 <label>아이디<br>
-                    <input type="text" name="id" id="id" class="textform" placeholder="아이디를 입력하세요" autocomplete="off"
-                        required>
+                    <input type="text" name="id" id="id" class="textform">
                 </label>
                 <div id="idError" class="error"></div>
             </div>
             <div class="password">
                 <label>비밀번호<br>
-                    <input type="password" name='pw' id="pw" class="textform" placeholder="비밀번호를 입력하세요"
-                        autocomplete="off" required>
+                    <input type="password" name='pw' id="pw" class="textform">
                 </label>
                 <div id="passwordError" class="error"></div>
             </div>
             <div class="passwordCheck">
                 <label>비밀번호 재확인<br>
-                    <input type="password" name='pw' id="pw" class="textform" placeholder="비밀번호를 다시 입력하세요"
-                        autocomplete="off" required>
+                    <input type="password" name='pwchk' id="pwchk" class="textform">
                 </label>
                 <div id="passwordCheckError" class="error"></div>
             </div>
             <div class="name">
                 <label>이름<br>
-                    <input type="text" name="name" id="name" class="textform" placeholder="이름을 입력하세요" autocomplete="off"
-                        required>
+                    <input type="text" name="name" id="name" class="textform">
                 </label>
                 <div id="nameError" class="error"></div>
             </div>
             <div class="email">
                 <label>이메일<br>
-                    <input type="email" name="email" id="email" class="textform" placeholder="이메일을 입력하세요"
-                        autocomplete="off" required>
+                    <input type="texxt" name="email" id="email" class="textform">
                 </label>
                 <div id="emailError" class="error"></div>
             </div>
             <div class="phone">
                 <label>휴대전화<br></label>
-                <input id="phone1" type="text" class="phoneform" size="1" maxlength="3" placeholder="01X"
-                    oninput="changePhone1()"><span class="phonedelimiter">-</span><input id="phone2" type="text"
-                    class="phoneform" size="3" maxlength="4" placeholder="1234" oninput="changePhone2()"><span
-                    class="phonedelimiter">-</span><input id="phone3" type="text" class="phoneform" size="3"
-                    maxlength="4" placeholder="5678" oninput="changePhone3()">
+                <input id="phone1" type="text" class="phoneform" maxlength="3"><span class="phonedelimiter">-</span><input id="phone2"
+                    type="text" class="phoneform" maxlength="4"><span class="phonedelimiter">-</span><input id="phone3" type="text"
+                    class="phoneform" maxlength="4">
                 <div id="phoneError" class="error"></div>
             </div>
             <div class="area">
@@ -117,11 +110,9 @@
                 <div id="genderError" class="error"></div>
             </div>
             <div class="signUp">
-                <button id="signUpButton" onclick="signUpCheck()">가입하기</button>
+                <input type="submit" id="signUpButton" value="가입하기">
             </div>
-
         </form>
-
     </section>
 
     <!-- 공통 하단 부분 -->
@@ -138,7 +129,6 @@
             </span>
         </div>
     </footer>
-</body>
 </body>
 
 </html>

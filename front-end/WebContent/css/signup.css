@@ -43,7 +43,12 @@ form label {
 }
 
 .error {
-    margin-bottom: 20px;
+	width: 300px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	text-align: left;
+	font-size: 75%;
+	color: red;
 }
 
 .phoneform {

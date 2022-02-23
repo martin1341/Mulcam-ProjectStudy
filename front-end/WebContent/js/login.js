@@ -7,6 +7,7 @@ window.onload = function () {
 
 	$("form").on('submit', function (e) {
 		var isOk = true;
+
 		if ($("#id").val() == "") {
 			e.preventDefault();
 			isOk = false;
