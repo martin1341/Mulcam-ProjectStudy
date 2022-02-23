@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>어디갈까?</title>
-<link href="css/subpage01.css" rel="stylesheet">
+<link href="css/subpage.css" rel="stylesheet">
 
 <!-- 웹폰트 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,14 +17,26 @@
 </head>
 <body>
 
-<header id=top>
-	<a id=main href=index.html>어디갈까?</a>
-	<a href=#>국내여행지추천</a>
-	<a href=#>해외여행지추천</a>
-	<a class=sign href=login.html>로그인</a>
-	<a class=sign href=#>회원가입</a>
-	<hr>
-</header>
+    <!-- 공통 상단 부분-->
+    <header id="menu">
+        <div id="menu-wrap">
+            <div id="logo">
+                <a href="index.html">어디갈까?</a>
+            </div>
+            <div id="quick">
+                <ul>
+                    <li><a href=#>국내여행</a></li>
+                    <li><a href=#>해외여행</a></li>
+                </ul>
+            </div>
+            <div id="member">
+                <ul>
+                    <li><a href="signup.html">회원가입</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
 
 <p id=title>아름다운 풍경과 함께, 거제도</p>
 
