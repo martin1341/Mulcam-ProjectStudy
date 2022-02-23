@@ -9,115 +9,38 @@ html, body {
     overflow-y: overlay;
 }
 
-/* 공통 상단 부분 */
-body {
-    padding-top: 51px;
-}
-
-#menu {
-    height: 50px;
-    width: 100%;
-    position: fixed;
-    top: 0px;
-    background: white;
-    border-bottom: 1px solid #eeeeee;
-    z-index: 999;
-}
-
-#menu a {
-    text-decoration: none;
-    color: black;
-}
-
-#menu ul {
-    list-style: none;
-}
-
-#menu-wrap {
-    width: 800px;
-    margin: 0 auto;
-}
-
-#logo {
-    float: left;
-    height: 50px;
-    text-align: left;
-    line-height: 55px;
-    margin-right: 50px;
-}
-
-#logo a {
-    font-family: 'Black Han Sans', sans-serif;
-    font-size: 200%;
-}
-
-#quick {
-    float: left;
-}
-
-#quick li {
-    float: left;
-    width: 100px;
-    height: 50px;
-    text-align: left;
-    line-height: 50px;
-}
-
-#quick a {
-    font-weight: bold;
-    font-size: 100%;
-}
-
-#member {
-    float: right;
-}
-
-#member li {
-    float: right;
-    width: 80px;
-    height: 50px;
-    text-align: right;
-    line-height: 50px;
-}
-
-#member a {
-    font-weight: lighter;
-    font-size: 90%;
-}
-
 /* 중간 로그인 페이지 부분 */
-
-
 #title {
 	text-align: center;
 	font-family : 'Black Han Sans', sans-serif;
-	font-size:170%;
-	margin: 20px;
+	font-size:250%;
+	margin-top: 100px;
 }
 
 form{
 	text-align: center;
-	margin : 50px auto;
+	margin-top: 50px;
+	margin-bottom: 100px;
 }
-
-
 
 #loginbtn {
-	width:180px;
+	width:300px;
+	height: 50px;
 	background-color: #666673;
 	color : white;
+	border: 1px solid #444444;
+	box-sizing: content-box;
+	margin-top: 20px;
 }
 
-/* 공통 하단 부분 */
-#bottom {
-	background-color: #e9e9e9;
-	border : 3px solid #e9e9e9;
-	width : 800px;
-	height: 80px;
-	margin: 0 auto;
+.textform {
+	width: 300px;
+	height: 50px;
+	border: 1px solid #444444;
+	font-size: 100%;
+	border-collapse: collapse;
 }
 
-#bottom > p {
-	font-size: 40%;
-	text-align: center;
+.textform:focus, .textform:hover {
+	outline: 1px solid black;
 }
