@@ -2,25 +2,22 @@ window.onload = function () {
     let banner = $("#banner ul");
     let first = $("#banner li:first-child").clone();
     banner.append(first);
-    let last = $("#banner li:last-child").clone();
-    banner.prepend(last);
 
-    let current = 1;
+    let current = 0;
     let width = Math.ceil(first.width());
-    banner.css("transform", "translateX(" + -width * current + "px)");
 
     function slide() {
         setInterval(function () {
-            current++;
             banner.css("transition", "2s");
-            banner.css("transform", "translateX(" + -width * current + "px)");
+            banner.css("transform", "translateX(" + -width * (current + 1) + "px)");
+            current++;
 
-            if (current === 3) {
+            if (current === 2) {
                 setTimeout(function () {
                     banner.css("transition", "0s");
-                    banner.css("transform", "translateX(" + -width + "px)");
+                    banner.css("transform", "translateX(0px)");
                 }, 2000)
-                current = 1;
+                current = 0;
             }
         }, 5000);
     }
