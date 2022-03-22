@@ -6,13 +6,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>어디갈까?</title>
-<%@ include file="include/head.jsp"%>
+<%@ include file="/WEB-INF/views/include/head.jsp"%>
 <!-- CSS, JavaScript -->
 <link href="<%=request.getContextPath()%>/resources/css/signup.css" rel="stylesheet">
 <script src="<%=request.getContextPath()%>/resources/js/signup.js"></script>
 </head>
 <body>
-	<%@ include file="include/header.jsp"%>
+	<%@ include file="/WEB-INF/views/include/header.jsp"%>
 
     <section class="wrap">
         <div class='title'>회원가입</div>
@@ -89,6 +89,6 @@
         </form>
     </section>
     
-    <%@ include file="include/footer.jsp"%>
+    <%@ include file="/WEB-INF/views/include/footer.jsp"%>
 </body>
 </html>
