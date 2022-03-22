@@ -4,7 +4,7 @@
 <header id="menu">
 	<div id="menu-wrap">
 		<div id="menu-logo">
-			<a href="index.html">어디갈까?</a>
+			<a href="/">어디갈까?</a>
 		</div>
 		<div id="quick">
 			<ul>
@@ -14,8 +14,8 @@
 		</div>
 		<div id="member">
 			<ul>
-				<li><a href="signup.html">회원가입</a></li>
-				<li><a href="login.html">로그인</a></li>
+				<li><a href="signup">회원가입</a></li>
+				<li><a href="login">로그인</a></li>
 			</ul>
 		</div>
 	</div>
