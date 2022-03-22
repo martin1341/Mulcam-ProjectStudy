@@ -1,44 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="ko">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>어디갈까?</title>
-    <!-- 웹폰트 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- CSS, JavaScript -->
-    <link href="css/header.css" rel="stylesheet">
-    <link href="css/footer.css" rel="stylesheet">
-    <link href="css/signup.css" rel="stylesheet">
-    <script src="js/signup.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>어디갈까?</title>
+<%@ include file="include/head.jsp"%>
+<!-- CSS, JavaScript -->
+<link href="<%=request.getContextPath()%>/resources/css/signup.css" rel="stylesheet">
+<script src="<%=request.getContextPath()%>/resources/js/signup.js"></script>
 </head>
-
 <body>
-    <!-- 공통 상단 부분-->
-    <header id="menu">
-        <div id="menu-wrap">
-            <div id="menu-logo">
-                <a href="index.html">어디갈까?</a>
-            </div>
-            <div id="quick">
-                <ul>
-                    <li><a href="#" onclick="alert('준비 중입니다.')">국내여행</a></li>
-                    <li><a href="#" onclick="alert('준비 중입니다.')">해외여행</a></li>
-                </ul>
-            </div>
-            <div id="member">
-                <ul>
-                    <li><a href="signup.html">회원가입</a></li>
-                    <li><a href="login.html">로그인</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+	<%@ include file="include/header.jsp"%>
 
     <section class="wrap">
         <div class='title'>회원가입</div>
@@ -114,21 +88,7 @@
             </div>
         </form>
     </section>
-
-    <!-- 공통 하단 부분 -->
-    <footer id=bottom>
-        <div id="bottom-wrap">
-            <div id="bottom-logo">
-                어디갈까?
-            </div>
-            <span>
-                KDT-VENTURE FRONT-END MINI PROJECT
-            </span>
-            <span>
-                7조 박병권 신미래 이강산 장재민
-            </span>
-        </div>
-    </footer>
+    
+    <%@ include file="include/footer.jsp"%>
 </body>
-
 </html>
