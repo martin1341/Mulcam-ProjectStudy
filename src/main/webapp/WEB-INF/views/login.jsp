@@ -6,13 +6,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>어디갈까?</title>
-<%@ include file="include/head.jsp"%>
+<%@ include file="/WEB-INF/views/include/head.jsp"%>
 <!-- CSS, JavaScript -->
 <link href="<%=request.getContextPath()%>/resources/css/login.css" rel="stylesheet">
 <script src="<%=request.getContextPath()%>/resources/js/login.js"></script>
 </head>
 <body>
-	<%@ include file="include/header.jsp"%>
+	<%@ include file="/WEB-INF/views/include/header.jsp"%>
 
 	<div id="login">
 		<p id=title>로그인</p>
@@ -25,6 +25,6 @@
 		</form>
 	</div>
 
-	<%@ include file="include/footer.jsp"%>
+	<%@ include file="/WEB-INF/views/include/footer.jsp"%>
 </body>
 </html>
