@@ -8,8 +8,7 @@
 		</div>
 		<div id="quick">
 			<ul>
-				<li><a href="#" onclick="alert('준비 중입니다.')">국내여행</a></li>
-				<li><a href="#" onclick="alert('준비 중입니다.')">해외여행</a></li>
+				<li><a href="#" onclick="board">모두의 추천</a></li>
 			</ul>
 		</div>
 		<div id="member">
