@@ -35,7 +35,6 @@ body {
     height: 50px;
     line-height: 55px;
     text-align: center;
-    margin-right: 30px;
     font-family: 'Black Han Sans', sans-serif;
     font-size: 200%;
 }
@@ -48,7 +47,7 @@ body {
     float: left;
     width: 100px;
     height: 50px;
-    text-align: left;
+    text-align: center;
     line-height: 50px;
 }
 
