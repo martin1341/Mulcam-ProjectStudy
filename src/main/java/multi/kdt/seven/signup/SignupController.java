@@ -17,12 +17,12 @@ public class SignupController {
 	@Autowired
 	@Qualifier("signupservice")
 	SignupService service;
-	
+
 	@GetMapping("/signup")
 	public String signup() {
 		return "signup";
 	}
-	
+  
 	@RequestMapping(value="/signup", method=RequestMethod.POST)
 	public ModelAndView insertresult(SignupDTO dto) {
 		int result = service.insertmember(dto);

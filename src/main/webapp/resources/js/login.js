@@ -1,5 +1,4 @@
 window.onload = function () {
-	
 	var member = {
 		"admin": "1234",
 		"first": "1111"

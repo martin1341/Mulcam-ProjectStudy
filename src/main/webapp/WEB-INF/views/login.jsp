@@ -10,12 +10,9 @@
 <!-- CSS, JavaScript -->
 <link href="<%=request.getContextPath()%>/resources/css/login.css" rel="stylesheet">
 <script src="<%=request.getContextPath()%>/resources/js/login.js"></script>
-
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/header.jsp"%>
-	
-
 	
 	<div id="login">
 		<p id=title>로그인</p>
@@ -36,10 +33,7 @@
 			<input type="submit" id=loginbtn name=submit value="로그인">
 		</form>
 	</div>
-	
-		
-	
-	
+
 	<%@ include file="/WEB-INF/views/include/footer.jsp"%>
 </body>
 </html>
