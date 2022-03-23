@@ -10,13 +10,12 @@ html, body {
 }
 
 /* 중간 내용 부분 */
-
-#subpage {
+#article {
 	margin: 0 auto;
 	width: 800px;
 }
 
-#subpage-wrap {
+#article-wrap {
 	width: 800px;
 	text-align: center;
 }
@@ -30,7 +29,7 @@ html, body {
 	margin: 50px auto;
 }
 
-#subpage img {
+#article img {
 	margin: 0 auto;
 }
 
