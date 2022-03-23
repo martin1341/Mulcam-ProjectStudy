@@ -1,4 +1,4 @@
-package multi.kdt.seven.signup;
+package multi.kdt.seven.signup.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
