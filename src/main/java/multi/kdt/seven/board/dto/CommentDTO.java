@@ -2,8 +2,8 @@ package multi.kdt.seven.board.dto;
 
 public class CommentDTO {
 
-	int articleNumber;
-	int commentNumber;
+	int articleId;
+	int commentId;
 	int commentDepth;
 	String commentAuthor;
 	String commentContent;
