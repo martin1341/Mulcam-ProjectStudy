@@ -22,8 +22,25 @@ public class BoardController {
 	BoardService service;
 
 	@GetMapping("/board")
-	public String board() {
-		return "board/articlelist";
+	public ModelAndView board(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView();
+		int page = 1;
+		int show = 9;
+		if (request.getParameter("page") != null) {
+			page = Integer.parseInt(request.getParameter("page"));
+		}
+		if (request.getParameter("show") != null) {
+			show = Integer.parseInt(request.getParameter("show"));
+		}
+
+		if (request.getParameter("search") != null) {
+			String keyword = (String) request.getParameter("search");
+			mv.addObject("articles", service.articleSearchPage(keyword, show * (page - 1), show));
+		} else {
+			mv.addObject("articles", service.articlePage(show * (page - 1), show));
+		}
+		mv.setViewName("board/articlelist");
+		return mv;
 	}
 
 	@GetMapping("/board/write")
@@ -32,15 +49,20 @@ public class BoardController {
 	}
 
 	@PostMapping("/board/write")
-	public ModelAndView articleWriteResult(ArticleDTO dto, @RequestParam("uploadImage") MultipartFile uploadImage, HttpServletRequest request) {
+	public ModelAndView articleWriteResult(HttpServletRequest request, ArticleDTO article, @RequestParam("uploadImage") MultipartFile uploadImage) {
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("id", service.writeArticle(dto, uploadImage, request));
+		String uploadPath = request.getSession().getServletContext().getRealPath("/resources/upload/");
+		mv.addObject("id", service.writeArticle(article, uploadImage, uploadPath));
 		mv.setViewName("redirect:/board/article");
 		return mv;
 	}
-	
+
 	@GetMapping("/board/article")
-	public ModelAndView articleRead(int id) {
+	public ModelAndView articleRead(HttpServletRequest request) {
+		int id = 1;
+		if (request.getParameter("id") != null) {
+			id = Integer.parseInt(request.getParameter("id"));
+		}
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("article", service.getArticle(id));
 		mv.setViewName("board/article");

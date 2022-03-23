@@ -2,7 +2,9 @@ package multi.kdt.seven.board.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,42 +26,56 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public List<ArticleDTO> articleList() {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.selectAllArticle();
 	}
 
 	@Override
-	public int writeArticle(ArticleDTO dto, MultipartFile uploadImage, HttpServletRequest request) {
+	public List<ArticleDTO> articlePage(int pageNum, int articleNum) {
+		Map<String, Object> page = new HashMap<String, Object>();
+		page.put("pageNum", pageNum);
+		page.put("articleNum", articleNum);
+		return dao.selectArticlePage(page);
+	}
+
+	@Override
+	public List<ArticleDTO> articleSearchPage(String keyword, int pageNum, int articleNum) {
+		Map<String, Object> search = new HashMap<String, Object>();
+		search.put("keyword", keyword);
+		search.put("pageNum", pageNum);
+		search.put("articleNum", articleNum);
+		return dao.selectArticleSearchPage(search);
+	}
+
+	@Override
+	public int writeArticle(ArticleDTO article, MultipartFile uploadImage, String uploadPath) {
 		// 테스트용. 추후 로그인 연동시 실제 사용자 아이디 사용
-		dto.setArticleAuthor("test");
+		article.setArticleAuthor("test");
 
 		if (!uploadImage.isEmpty()) {
-			String path = request.getSession().getServletContext().getRealPath("/resources/upload/");
-
-			// 파일 저장 후 경로 저장
-			String originFileName = uploadImage.getOriginalFilename();
-			int index = originFileName.lastIndexOf(".");
-			String fileName = originFileName.substring(0, index);
-			String ext = originFileName.substring(index);
+			// 파일 이름 가공
+			String originalFileName = uploadImage.getOriginalFilename();
+			int index = originalFileName.lastIndexOf(".");
+			String fileName = originalFileName.substring(0, index);
+			String ext = originalFileName.substring(index);
 			String savedFileName = fileName + "_" + UUID.randomUUID().toString().substring(0, 8) + ext;
 
-			File saveFile = new File(path + savedFileName);
+			// 파일 저장
+			File saveFile = new File(uploadPath + savedFileName);
 			try {
 				uploadImage.transferTo(saveFile);
-				dto.setArticleImage("/resources/upload/" + savedFileName);
+				article.setArticleImage("/resources/upload/" + savedFileName);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		dao.insertArticle(dto);
-		return dto.getArticleId();
+		dao.insertArticle(article);
+		return article.getArticleId();
 	}
 
 	@Override
 	public ArticleDTO getArticle(int articleId) {
+		dao.updateViews(articleId);
 		return dao.selectArticle(articleId);
 	}
-	
-	
 
 }
