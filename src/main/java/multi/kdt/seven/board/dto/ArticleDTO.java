@@ -1,5 +1,9 @@
 package multi.kdt.seven.board.dto;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class ArticleDTO {
 
 	int articleId;
@@ -7,6 +11,9 @@ public class ArticleDTO {
 	String articleAuthor;
 	String articleContent;
 	String articleImage;
+	String articleDate;
+	int articleViews;
+	int articleRecommends;
 
 	public int getArticleId() {
 		return articleId;
@@ -46,6 +53,30 @@ public class ArticleDTO {
 
 	public void setArticleImage(String articleImage) {
 		this.articleImage = articleImage;
+	}
+
+	public String getArticleDate() {
+		return articleDate;
+	}
+
+	public void setArticleDate(Timestamp articleDate) {
+		this.articleDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(articleDate.getTime()));
+	}
+
+	public int getArticleViews() {
+		return articleViews;
+	}
+
+	public void setArticleViews(int articleViews) {
+		this.articleViews = articleViews;
+	}
+
+	public int getArticleRecommends() {
+		return articleRecommends;
+	}
+
+	public void setArticleRecommends(int articleRecommends) {
+		this.articleRecommends = articleRecommends;
 	}
 
 }

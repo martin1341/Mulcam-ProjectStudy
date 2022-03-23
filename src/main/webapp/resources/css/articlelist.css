@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+html, body {
+	overflow-y: overlay;
+}
+
+/* 본문 */
+#articlelist {
+	width: 800px;
+	margin: 0 auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	overflow: hidden;
+}
+
+#articlelist-title {
+	height: 50px;
+	line-height: 50px;
+	font-size: 150%;
+	font-weight: bold;
+}
+
+#articlelist ul {
+	list-style: none;
+}
+
+#articlelist li {
+	float: left;
+	width: 260px;
+	height: 280px;
+	margin-right: 10px;
+}
+
+#articlelist li:nth-child(3n) {
+	margin-right: 0px;
+}
+
+#articlelist a {
+	text-decoration: none;
+	color: #444444;
+}
+
+.article-image {
+	height: 200px;
+}
+
+.article-image img {
+	width: 260px;
+	height: 200px;
+	border-radius: 5%;
+	overflow: hidden;
+}
+
+.article-content {
+	height: 80px;
+}
+
+.article-content span {
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.article-title {
+	width: 260px;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+.article-author {
+	width: 260px;
+}
+
+.article-info {
+	width: 160px;
+	color: #999999;
+}
+.article-date {
+	width: 100px;
+	color: #999999;
+	text-align: right;
+}
+
+#boardbar {
+	width: 800px;
+	height: 50px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+}
+
+#listbtn, #writebtn {
+	width: 100px;
+	height: 50px;
+	background-color: #666673;
+	color: white;
+	border: 1px solid #444444;
+	box-sizing: border-box;
+}
+
+#listbtn {
+	float: left;
+}
+
+#writebtn {
+	float: right;
+}
+
+#paginator {
+	height: 25px;
+}
+
+#boardbar form {
+	margin: 0 auto;
+	width: 350px;
+	text-align: center;
+}
+
+#searchform {
+	width: 300px;
+	height: 25px;
+	border: 1px solid #444444;
+	box-sizing: border-box;
+	float: left;
+}
+
+#searchform:focus, #searchform:hover {
+	outline: 1px solid black;
+}
+
+#searchbtn {
+	width: 50px;
+	height: 25px;
+	background-color: #666673;
+	color: white;
+	border: 1px solid #444444;
+	box-sizing: border-box;
+	float: left;
+}
+
+.boardbarbtn:hover {
+	cursor: pointer;
+}

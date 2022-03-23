@@ -19,14 +19,26 @@
 	<article id="article">
 		<div id="article-wrap">
 			<h1 id="title">${ article.articleTitle }</h1>
+			<div id="article-info">
+				<span>작성자 ${ article.articleAuthor }</span><br>
+				<span>작성일 ${ article.articleDate }</span><br>
+				<span>조회 ${ article.articleViews } 추천 ${ article.articleRecommends }</span>
+			</div>
 			<img src="<%=request.getContextPath()%>${ article.articleImage }" width=600>
 			<p id="content">
-				<%pageContext.setAttribute("enter", "\r\n");%>
+				<%
+				pageContext.setAttribute("enter", "\r\n");
+				%>
 				${ fn:replace(article.articleContent, enter, "<br>") }
 			</p>
 		</div>
 	</article>
 
+	<section id="articlebar">
+		<input type="button" id="listbtn" class="articlebarbtn" value="최신글" onclick="location.href='/board'">
+		<input type="button" id="deletebtn" class="articlebarbtn" value="삭제" onclick="location.href='/board/delete?id=${ article.articleId }'">
+		<input type="button" id="editbtn" class="articlebarbtn" value="수정" onclick="location.href='/board/edit?id=${ article.articleId }'">
+	</section>
 
 	<%@ include file="/WEB-INF/views/include/footer.jsp"%>
 </body>

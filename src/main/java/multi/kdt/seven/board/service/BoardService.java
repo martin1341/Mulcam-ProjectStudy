@@ -12,7 +12,11 @@ public interface BoardService {
 	
 	public List<ArticleDTO> articleList();
 	
-	public int writeArticle(ArticleDTO dto, MultipartFile uploadImage, HttpServletRequest request);
+	public List<ArticleDTO> articlePage(int pageNum, int articleNum);
+	
+	public List<ArticleDTO> articleSearchPage(String keyword, int pageNum, int articleNum);
+	
+	public int writeArticle(ArticleDTO article, MultipartFile uploadImage, String uploadPath);
 	
 	public ArticleDTO getArticle(int articleId);
 	
