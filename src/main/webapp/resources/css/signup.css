@@ -1,45 +1,45 @@
 @charset "UTF-8";
 
 * {
-    margin: 0px;
-    padding: 0px;
+	margin: 0px;
+	padding: 0px;
 }
 
 html, body {
-    overflow-y: overlay;
+	overflow-y: overlay;
 }
 
 /* 회원가입 부분 */
 .wrap {
-    margin: 0 auto;
-    width: 800px;
+	margin: 0 auto;
+	width: 800px;
 }
 
 .wrap .title {
-    text-align: center;
-    font-family: 'Black Han Sans', sans-serif;
-    font-size: 250%;
-    margin-top: 100px;
+	text-align: center;
+	font-family: 'Black Han Sans', sans-serif;
+	font-size: 250%;
+	margin-top: 100px;
 }
 
 .wrap form {
-    width: 300px;
-    margin: 0 auto;
-    margin-top: 50px;
-    margin-bottom: 100px;
+	width: 300px;
+	margin: 0 auto;
+	margin-top: 50px;
+	margin-bottom: 100px;
 }
 
 form label {
-    text-align: left;
-    font-weight: bold;
+	text-align: left;
+	font-weight: bold;
 }
 
 .textform {
-    width: 300px;
-    height: 50px;
-    border: 1px solid #444444;
-    font-size: 100%;
-    box-sizing: border-box;
+	width: 300px;
+	height: 50px;
+	border: 1px solid #444444;
+	font-size: 100%;
+	box-sizing: border-box;
 }
 
 .error {
@@ -52,35 +52,39 @@ form label {
 }
 
 .phoneform {
-    width: 90px;
-    height: 50px;
-    border: 1px solid #444444;
-    font-size: 100%;
-    box-sizing: border-box;
+	width: 90px;
+	height: 50px;
+	border: 1px solid #444444;
+	font-size: 100%;
+	box-sizing: border-box;
 }
 
 .phonedelimiter {
-    display: inline-block;
-    width: 15px;
-    text-align: center;
+	display: inline-block;
+	width: 15px;
+	text-align: center;
 }
 
 .textform:focus, .textform:hover, .phoneform:focus, .phoneform:hover, form select:focus, form select:hover {
-    outline: 1px solid black;
+	outline: 1px solid black;
 }
 
 form select {
-    width: 300px;
-    height: 50px;
-    border: 1px solid #444444;
-    box-sizing: border-box;
+	width: 300px;
+	height: 50px;
+	border: 1px solid #444444;
+	box-sizing: border-box;
 }
 
 #signUpButton {
-    width: 300px;
-    height: 50px;
-    background-color: #666673;
-    color: white;
-    border: 1px solid #444444;
-    box-sizing: border-box;
+	width: 300px;
+	height: 50px;
+	background-color: #666673;
+	color: white;
+	border: 1px solid #444444;
+	box-sizing: border-box;
+}
+
+#signUpButton:hover {
+	cursor: pointer;
 }

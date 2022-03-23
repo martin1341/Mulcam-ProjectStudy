@@ -43,7 +43,7 @@
             </div>
             <div class="email">
                 <label>이메일<br>
-                    <input type="texxt" name="email" id="email" class="textform">
+                    <input type="text" name="email" id="email" class="textform">
                 </label>
                 <div id="emailError" class="error"></div>
             </div>
