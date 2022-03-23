@@ -8,13 +8,13 @@
 		</div>
 		<div id="quick">
 			<ul>
-				<li><a href="#" onclick="board">모두의 추천</a></li>
+				<li><a href="/board" onclick="board">모두의 추천</a></li>
 			</ul>
 		</div>
 		<div id="member">
 			<ul>
-				<li><a href="signup">회원가입</a></li>
-				<li><a href="login">로그인</a></li>
+				<li><a href="/signup">회원가입</a></li>
+				<li><a href="/login">로그인</a></li>
 			</ul>
 		</div>
 	</div>
