@@ -27,7 +27,7 @@ public class LoginController {
 		MemberDTO userdto = service.loginmember(dto);
 		
 		if(userdto == null) {
-			model.addAttribute("msg", "Á¸ÀçÇÏÁö ¾Ê´Â »ç¿ëÀÚÀÔ´Ï´Ù.");
+			model.addAttribute("msg", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 			return "login";
 		}else {
 			return "index";
