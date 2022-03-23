@@ -16,7 +16,7 @@
 
     <section class="wrap">
         <div class='title'>회원가입</div>
-        <form action="index.html" method="post">
+        <form action="signup" method="post">
             <div class="id">
                 <label>아이디<br>
                     <input type="text" name="id" id="id" class="textform">
@@ -37,7 +37,7 @@
             </div>
             <div class="name">
                 <label>이름<br>
-                    <input type="text" name="name" id="name" class="textform">
+                    <input type="text" name="membername" id="name" class="textform">
                 </label>
                 <div id="nameError" class="error"></div>
             </div>

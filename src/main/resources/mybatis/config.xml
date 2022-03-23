@@ -9,5 +9,7 @@
 	<typeAliases>
 		<typeAlias type="multi.kdt.seven.board.dto.ArticleDTO" alias="ArticleDTO" />
 		<typeAlias type="multi.kdt.seven.board.dto.CommentDTO" alias="CommentDTO" />
+		<typeAlias type="multi.kdt.seven.login.dto.MemberDTO" alias="MemberDTO" />
+		<typeAlias type="multi.kdt.seven.signup.dto.SignupDTO" alias="SignupDTO" />
 	</typeAliases>
 </configuration>

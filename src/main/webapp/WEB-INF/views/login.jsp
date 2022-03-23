@@ -13,10 +13,19 @@
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/header.jsp"%>
-
+	
 	<div id="login">
 		<p id=title>로그인</p>
-		<form action="index.html" method="post">
+		
+			<c:if test="${msg != null}">
+				<div id=result>
+					<span>
+						${msg}
+					</span>
+				</div>
+			</c:if>
+		
+		<form action="login" method="post">
 			<input type=text id=id class=textform name=id placeholder='아이디'><br>
 			<div id="iderror" class="errormessage"></div>
 			<input type=password id=pw class=textform name=pw placeholder='비밀번호'><br>

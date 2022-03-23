@@ -1,5 +1,4 @@
 window.onload = function () {
-
 	var member = {
 		"admin": "1234",
 		"first": "1111"
@@ -25,6 +24,7 @@ window.onload = function () {
 			$("#passerror").text("");
 		}
 
+/*		alert($("#pw").val() + "," + member[$("#id").val()]);
 		if (isOk) {
 			if (typeof member[$("#id").val()] == "undefined") {
 				e.preventDefault();
@@ -33,6 +33,6 @@ window.onload = function () {
 				e.preventDefault();
 				alert("잘못된 비밀번호입니다.");
 			}
-		}
+		}*/
 	});
 }
