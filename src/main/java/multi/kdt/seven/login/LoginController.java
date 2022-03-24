@@ -43,7 +43,7 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/logout", method=RequestMethod.GET)	
-	public String logout(MemberDTO dto, Model model, HttpServletRequest request, HttpServletResponse response) {
+	public String logout(MemberDTO dto, HttpServletRequest request, HttpServletResponse response) {
 		MemberDTO userdto = service.loginmember(dto);
 
 		HttpSession session = request.getSession(false);
