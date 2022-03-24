@@ -25,10 +25,11 @@ public class SignupController {
   
 	@RequestMapping(value="/signup", method=RequestMethod.POST)
 	public ModelAndView insertresult(SignupDTO dto) {
+//		System.out.println("폰넘버 확인"+dto.getPhone1());
 		int result = service.insertmember(dto);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("result", result);
-		mv.setViewName("index");
+		mv.setViewName("signupresult");
 		return mv;
 	}
 }

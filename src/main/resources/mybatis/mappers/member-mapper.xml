@@ -7,6 +7,6 @@
 		select * from member where id=#{id} and pw=#{pw}
 	</select>
 	<insert id="signupmember">
-		insert into member values(#{id},#{pw},#{membername},#{email},#{phone},#{area},#{gender})
+		insert into member values(#{id},#{pw},#{membername},#{email})
 	</insert>
 </mapper>

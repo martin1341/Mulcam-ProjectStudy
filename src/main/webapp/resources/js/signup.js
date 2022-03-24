@@ -15,11 +15,11 @@ window.onload = function () {
 			$("#idError").text("알파벳과 숫자의 조합으로 3자 이상 입력해주세요.");
 		} else {
 			$("#idError").text("");
-			if (member.includes($("#id").val())) {
+			/*if (member.includes($("#id").val())) {
 				e.preventDefault();
 				isOk = false;
 				$("#idError").text("이미 사용중인 아이디입니다.");
-			}
+			}*/
 		}
 
 		if ($("#pw").val() == "") {
@@ -105,9 +105,9 @@ window.onload = function () {
 			$("#genderError").text("");
 		}
 
-		if (isOk) {
+/*		if (isOk) {
 			alert("회원가입이 완료되었습니다.");
-		}
+		}*/
 	});
 
 	$("#phone1").on("input", function () {
