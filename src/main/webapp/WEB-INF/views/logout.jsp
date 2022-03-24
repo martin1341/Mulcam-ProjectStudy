@@ -8,7 +8,7 @@
 <title>어디갈까?</title>
 <%@ include file="/WEB-INF/views/include/head.jsp"%>
 <!-- CSS, JavaScript -->
-<link href="<%=request.getContextPath()%>/resources/css/signupresult.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/logout.css" rel="stylesheet">
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/header.jsp"%>
