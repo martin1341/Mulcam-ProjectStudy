@@ -10,8 +10,6 @@ import multi.kdt.seven.board.dto.ArticleDTO;
 
 public interface BoardService {
 	
-	public List<ArticleDTO> articleList();
-	
 	public List<ArticleDTO> articlePage(int pageNum, int articleNum);
 	
 	public List<ArticleDTO> articleSearchPage(String keyword, int pageNum, int articleNum);

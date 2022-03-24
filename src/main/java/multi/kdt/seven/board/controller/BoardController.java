@@ -44,8 +44,17 @@ public class BoardController {
 	}
 
 	@GetMapping("/board/write")
-	public String articleWrite() {
-		return "board/articlewrite";
+	public ModelAndView articleWrite(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView();
+		String session_id = (String) request.getSession().getAttribute("session_id");
+		if(session_id != null) {
+			mv.setViewName("board/articlewrite");
+		} else {
+			mv.addObject("returnURL", "board/write");
+			mv.setViewName("redirect:/login");
+		}
+		
+		return mv;
 	}
 
 	@PostMapping("/board/write")
@@ -59,12 +68,12 @@ public class BoardController {
 
 	@GetMapping("/board/article")
 	public ModelAndView articleRead(HttpServletRequest request) {
-		int id = 1;
+		int articleId = 1;
 		if (request.getParameter("id") != null) {
-			id = Integer.parseInt(request.getParameter("id"));
+			articleId = Integer.parseInt(request.getParameter("id"));
 		}
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("article", service.getArticle(id));
+		mv.addObject("article", service.getArticle(articleId));
 		mv.setViewName("board/article");
 		return mv;
 	}
