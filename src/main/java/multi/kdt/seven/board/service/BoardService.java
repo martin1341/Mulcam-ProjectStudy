@@ -18,4 +18,8 @@ public interface BoardService {
 	
 	public ArticleDTO getArticle(int articleId);
 	
+	public int updateViews(int articleId);
+	
+	public int editArticle(ArticleDTO oldArticle, ArticleDTO newArticle, MultipartFile uploadImage, String uploadPath);
+	
 }

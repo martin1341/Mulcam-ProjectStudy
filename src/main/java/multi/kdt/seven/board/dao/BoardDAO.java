@@ -34,5 +34,9 @@ public class BoardDAO {
 	public int updateViews(int articleId) {
 		return session.update("updateViews", articleId);
 	}
+	
+	public int editArticle(ArticleDTO dto) {
+		return session.update("updateArticle", dto);
+	}
 
 }

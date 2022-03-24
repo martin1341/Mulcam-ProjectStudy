@@ -7,8 +7,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -49,13 +47,13 @@ public class BoardServiceImpl implements BoardService {
 			int index = originalFileName.lastIndexOf(".");
 			String fileName = originalFileName.substring(0, index);
 			String ext = originalFileName.substring(index);
-			String savedFileName = fileName + "_" + UUID.randomUUID().toString().substring(0, 8) + ext;
+			String savedFileName = "/resources/upload/" + fileName + "_" + UUID.randomUUID().toString().substring(0, 8) + ext;
 
 			// 파일 저장
 			File saveFile = new File(uploadPath + savedFileName);
 			try {
 				uploadImage.transferTo(saveFile);
-				article.setArticleImage("/resources/upload/" + savedFileName);
+				article.setArticleImage(savedFileName);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -66,8 +64,40 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public ArticleDTO getArticle(int articleId) {
-		dao.updateViews(articleId);
 		return dao.selectArticle(articleId);
+	}
+
+	@Override
+	public int updateViews(int articleId) {
+		return dao.updateViews(articleId);
+	}
+
+	@Override
+	public int editArticle(ArticleDTO oldArticle, ArticleDTO newArticle, MultipartFile uploadImage, String uploadPath) {
+		if (!uploadImage.isEmpty()) {
+			// 기존 파일 삭제
+			File oldFile = new File(uploadPath + oldArticle.getArticleImage());
+			oldFile.delete();
+
+			// 파일 이름 가공
+			String originalFileName = uploadImage.getOriginalFilename();
+			int index = originalFileName.lastIndexOf(".");
+			String fileName = originalFileName.substring(0, index);
+			String ext = originalFileName.substring(index);
+			String savedFileName = "/resources/upload/" + fileName + "_" + UUID.randomUUID().toString().substring(0, 8) + ext;
+
+			// 새 파일 저장
+			File saveFile = new File(uploadPath + savedFileName);
+			try {
+				uploadImage.transferTo(saveFile);
+				newArticle.setArticleImage(savedFileName);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		newArticle.setArticleId(oldArticle.getArticleId());
+		dao.editArticle(newArticle);
+		return newArticle.getArticleId();
 	}
 
 }
