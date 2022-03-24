@@ -17,9 +17,9 @@
 	<section id="banner">
 		<div id="banner-wrap">
 			<ul>
-				<li><a href="subpage3.html"> <img src="resources/img/800_450/busan3_800.jpg">
+				<li><a href="/board/article?id=1"> <img src="resources/img/800_450/busan3_800.jpg">
 				</a></li>
-				<li><a href="subpage5.html"> <img src="resources/img/800_450/gyeongju_800.jpg">
+				<li><a href="/board/article?id=5"> <img src="resources/img/800_450/gyeongju_800.jpg">
 				</a></li>
 			</ul>
 		</div>
@@ -31,7 +31,7 @@
 		<div id="today-wrap">
 			<span>오늘의 추천 여행</span>
 			<ul>
-				<li><a href="subpage1.html">
+				<li><a href="/board/article?id=1">
 						<div class="today-image">
 							<img src="resources/img/260_200/busan1_260.jpg">
 						</div>
@@ -40,7 +40,7 @@
 							<p>부산의 상징, 해운대 해수욕장!</p>
 						</div>
 				</a></li>
-				<li><a href="subpage2.html">
+				<li><a href="/board/article?id=2">
 						<div class="today-image">
 							<img src="resources/img/260_200/busan2_260.jpg">
 						</div>
@@ -49,7 +49,7 @@
 							<p>부산 원도심의 대표적인 랜드마크</p>
 						</div>
 				</a></li>
-				<li><a href="subpage7.html">
+				<li><a href="/board/article?id=7">
 						<div class="today-image">
 							<img src="resources/img/260_200/jeju_260.jpg">
 						</div>
@@ -58,7 +58,7 @@
 							<p>예쁜 바다 산책로도 함께 즐기는 작고 아담한 해수욕장</p>
 						</div>
 				</a></li>
-				<li><a href="subpage4.html">
+				<li><a href="/board/article?id=4">
 						<div class="today-image">
 							<img src="resources/img/260_200/geoje_260.jpg">
 						</div>
@@ -67,7 +67,7 @@
 							<p>대한민국에서 2번째로 큰 섬</p>
 						</div>
 				</a></li>
-				<li><a href="subpage5.html">
+				<li><a href="/board/article?id=5">
 						<div class="today-image">
 							<img src="resources/img/260_200/gyeongju_260.jpg">
 						</div>
@@ -76,7 +76,7 @@
 							<p>안압지로 불려지던 동궁과 월지</p>
 						</div>
 				</a></li>
-				<li><a href="subpage6.html">
+				<li><a href="/board/article?id=6">
 						<div class="today-image">
 							<img src="resources/img/260_200/yeosu_260.jpg">
 						</div>
