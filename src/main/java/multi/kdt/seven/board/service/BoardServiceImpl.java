@@ -94,6 +94,8 @@ public class BoardServiceImpl implements BoardService {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+		} else {
+			newArticle.setArticleImage(oldArticle.getArticleImage());
 		}
 		newArticle.setArticleId(oldArticle.getArticleId());
 		dao.editArticle(newArticle);
