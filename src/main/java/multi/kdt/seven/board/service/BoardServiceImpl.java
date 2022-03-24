@@ -25,11 +25,6 @@ public class BoardServiceImpl implements BoardService {
 	BoardDAO dao;
 
 	@Override
-	public List<ArticleDTO> articleList() {
-		return dao.selectAllArticle();
-	}
-
-	@Override
 	public List<ArticleDTO> articlePage(int pageNum, int articleNum) {
 		Map<String, Object> page = new HashMap<String, Object>();
 		page.put("pageNum", pageNum);
@@ -48,9 +43,6 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public int writeArticle(ArticleDTO article, MultipartFile uploadImage, String uploadPath) {
-		// 테스트용. 추후 로그인 연동시 실제 사용자 아이디 사용
-		article.setArticleAuthor("test");
-
 		if (!uploadImage.isEmpty()) {
 			// 파일 이름 가공
 			String originalFileName = uploadImage.getOriginalFilename();

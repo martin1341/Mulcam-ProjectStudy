@@ -8,21 +8,25 @@
 <title>어디갈까?</title>
 <%@ include file="/WEB-INF/views/include/head.jsp"%>
 <!-- CSS, JavaScript -->
-<link href="<%=request.getContextPath()%>/resources/css/index.css" rel="stylesheet">
-<script src="<%=request.getContextPath()%>/resources/js/index.js"></script>
+<link href="<%=request.getContextPath()%>/resources/css/articlewrite.css" rel="stylesheet">
+<script src="<%=request.getContextPath()%>/resources/js/articlewrite.js"></script>
 </head>
-<body style="text-align: center">
+<body>
 	<%@ include file="/WEB-INF/views/include/header.jsp"%>
-	<br>
-	<h1>글쓰기(공사 중)</h1>
-	<br>
-	<form action="write" method="post" enctype="multipart/form-data">
-		<input type="text" name="articleTitle" placeholder="제목을 입력해주세요."><br>
-		<input type="file" name="uploadImage" placeholder="대표 이미지를 선택해주세요."><br>
-		<textarea name="articleContent" rows="20" cols="50" placeholder="내용을 입력해주세요."></textarea><br>
-		<input type="submit" value="등록">
-	</form>
-	<br>
+
+	<section id="articlewrite">
+		<div id="articlewrite-wrap">
+			<form action="write" method="post" enctype="multipart/form-data">
+				<input type="text" id="articleTitleForm" name="articleTitle" placeholder="제목을 입력해주세요.">
+				<div id="articleImageUpload">대표 이미지 추가: <input type="file" id="articleImageForm" name="uploadImage"></div>
+				<textarea id="articleContentForm" name="articleContent" placeholder="내용을 입력해주세요."></textarea>
+				<input type="submit" id="writebtn" class="articlewritebtn" value="등록">
+				<input type="button" id="cancelbtn" class="articlewritebtn" value="취소" onclick="location.href='/board'">
+				<input type="hidden" name="articleAuthor" value="${ sessionScope.session_id }">
+			</form>
+		</div>
+	</section>
+
 	<%@ include file="/WEB-INF/views/include/footer.jsp"%>
 </body>
 </html>

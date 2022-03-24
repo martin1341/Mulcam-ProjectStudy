@@ -24,13 +24,14 @@
 					</span>
 				</div>
 			</c:if>
-		
+			
 		<form action="login" method="post">
 			<input type=text id=id class=textform name=id placeholder='아이디'><br>
 			<div id="iderror" class="errormessage"></div>
 			<input type=password id=pw class=textform name=pw placeholder='비밀번호'><br>
 			<div id="passerror" class="errormessage"></div>
 			<input type="submit" id=loginbtn name=submit value="로그인">
+			<input type="hidden" name="returnURL" value="${ returnURL }">
 		</form>
 	</div>
 

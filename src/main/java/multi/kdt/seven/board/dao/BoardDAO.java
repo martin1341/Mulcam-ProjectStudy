@@ -15,10 +15,6 @@ public class BoardDAO {
 	@Autowired
 	SqlSession session;
 
-	public List<ArticleDTO> selectAllArticle() {
-		return session.selectList("selectAllArticle");
-	};
-
 	public List<ArticleDTO> selectArticlePage(Map<String, Object> page) {
 		return session.selectList("selectArticlePage", page);
 	}
