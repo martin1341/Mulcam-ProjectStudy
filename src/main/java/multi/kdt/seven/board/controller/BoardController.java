@@ -47,20 +47,20 @@ public class BoardController {
 	public ModelAndView articleWrite(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();
 		String session_id = (String) request.getSession().getAttribute("session_id");
-		if(session_id != null) {
+		if (session_id != null) {
 			mv.setViewName("board/articlewrite");
 		} else {
 			mv.addObject("returnURL", "board/write");
 			mv.setViewName("redirect:/login");
 		}
-		
+
 		return mv;
 	}
 
 	@PostMapping("/board/write")
 	public ModelAndView articleWriteResult(HttpServletRequest request, ArticleDTO article, @RequestParam("uploadImage") MultipartFile uploadImage) {
 		ModelAndView mv = new ModelAndView();
-		String uploadPath = request.getSession().getServletContext().getRealPath("/resources/upload/");
+		String uploadPath = request.getSession().getServletContext().getRealPath("/");
 		mv.addObject("id", service.writeArticle(article, uploadImage, uploadPath));
 		mv.setViewName("redirect:/board/article");
 		return mv;
@@ -73,8 +73,49 @@ public class BoardController {
 			articleId = Integer.parseInt(request.getParameter("id"));
 		}
 		ModelAndView mv = new ModelAndView();
+		service.updateViews(articleId);
 		mv.addObject("article", service.getArticle(articleId));
 		mv.setViewName("board/article");
+		return mv;
+	}
+
+	@GetMapping("/board/delete")
+	public ModelAndView articleDelete(HttpServletRequest request, int id) {
+		ModelAndView mv = new ModelAndView();
+		String session_id = (String) request.getSession().getAttribute("session_id");
+		ArticleDTO article = service.getArticle(id);
+		if (session_id.equals(article.getArticleAuthor()) || session_id.equals("admin")) {
+			mv.addObject("article", article);
+			mv.setViewName("board/articledelete");
+		} else {
+			mv.setViewName("board/nopermission");
+		}
+
+		return mv;
+	}
+	
+	@GetMapping("/board/edit")
+	public ModelAndView articleEdit(HttpServletRequest request, int id) {
+		ModelAndView mv = new ModelAndView();
+		String session_id = (String) request.getSession().getAttribute("session_id");
+		ArticleDTO article = service.getArticle(id);
+		if (session_id.equals(article.getArticleAuthor()) || session_id.equals("admin")) {
+			mv.addObject("article", article);
+			mv.setViewName("board/articleedit");
+		} else {
+			mv.setViewName("board/nopermission");
+		}
+
+		return mv;
+	}
+	
+	@PostMapping("/board/edit")
+	public ModelAndView articleEditResult(HttpServletRequest request, ArticleDTO newArticle, @RequestParam("uploadImage") MultipartFile uploadImage, int id) {
+		ModelAndView mv = new ModelAndView();
+		ArticleDTO oldArticle = service.getArticle(id);
+		String uploadPath = request.getSession().getServletContext().getRealPath("/");
+		mv.addObject("id", service.editArticle(oldArticle, newArticle, uploadImage, uploadPath));
+		mv.setViewName("redirect:/board/article");
 		return mv;
 	}
 

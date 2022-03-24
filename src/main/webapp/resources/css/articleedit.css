@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+html, body {
+	overflow-y: overlay;
+}
+
+/* 중간 내용 부분 */
+#articleedit {
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 800px;
+}
+
+#articleedit-wrap {
+	width: 800px;
+	text-align: center;
+	margin-bottom: 100px;
+}
+
+#articleTitleForm {
+	width: 800px;
+	height: 50px;
+	border: 1px solid #444444;
+	font-size: 100%;
+	box-sizing: border-box;
+}
+
+#articleImageUpload {
+	width: 800px;
+	height: 50px;
+	text-align: left;
+	margin-top: 30px;
+}
+
+#articleImageForm {
+	width: 300px;
+	height: 50px;
+	box-sizing: border-box;
+}
+
+#articleContentForm {
+	width: 800px;
+	height: 500px;
+	border: 1px solid #444444;
+	font-size: 1.3em;
+	box-sizing: border-box;
+	resize: none;
+	margin-bottom: 30px;
+}
+
+#editbtn, #cancelbtn {
+	width: 100px;
+	height: 50px;
+	background-color: #666673;
+	color: white;
+	border: 1px solid #444444;
+	box-sizing: border-box;
+	float: right;
+}
+
+.articleeditbtn:hover {
+	cursor: pointer;
+}
