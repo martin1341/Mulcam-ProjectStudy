@@ -11,7 +11,8 @@ html, body {
 
 #result {
     text-align: center;
-    font-family: sans-serif;
-    margin-top: 100px;
+	font-family: 'Black Han Sans', sans-serif;
+	font-size: 250%;
+	margin-top: 100px;
     margin-bottom: 100px;
 }
