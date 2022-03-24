@@ -5,9 +5,7 @@ public class MemberDTO {
 	String pw;
 	String mwmbername;
 	String email;
-	String phone;
-	String area;
-	String gender;
+
 	
 	public String getId() {
 		return id;
@@ -33,24 +31,5 @@ public class MemberDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPhone() {
-		return phone;
-	}
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-	public String getArea() {
-		return area;
-	}
-	public void setArea(String area) {
-		this.area = area;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-	
 	
 }

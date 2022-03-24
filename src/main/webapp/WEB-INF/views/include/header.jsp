@@ -13,8 +13,22 @@
 		</div>
 		<div id="member">
 			<ul>
-				<li><a href="/signup">회원가입</a></li>
-				<li><a href="/login">로그인</a></li>
+				<li>
+					<c:if test="${sessionScope.session_id == null}">
+						<a href="/signup">회원가입</a>
+					</c:if>
+					<c:if test="${sessionScope.session_id != null}">
+						<a href="/mypage">마이페이지</a>
+					</c:if>
+				</li>
+				<li>
+					<c:if test="${sessionScope.session_id == null}">
+						<a href="/login">로그인</a>
+					</c:if>
+					<c:if test="${sessionScope.session_id != null}">
+						<a href="/logout">로그아웃</a>
+					</c:if>
+				</li>
 			</ul>
 		</div>
 	</div>

@@ -43,20 +43,18 @@
             </div>
             <div class="email">
                 <label>이메일<br>
-                    <input type="texxt" name="email" id="email" class="textform">
+                    <input type="text" name="email" id="email" class="textform">
                 </label>
                 <div id="emailError" class="error"></div>
             </div>
-            <div class="phone">
+ <!--            <div class="phone">
                 <label>휴대전화<br></label>
-                <input id="phone1" type="text" class="phoneform" maxlength="3"><span class="phonedelimiter">-</span><input id="phone2"
-                    type="text" class="phoneform" maxlength="4"><span class="phonedelimiter">-</span><input id="phone3" type="text"
-                    class="phoneform" maxlength="4">
+                <input id="phone1" name=phone1 type="text" class="phoneform" maxlength="3"><span class="phonedelimiter">-</span><input id="phone2" name=phone2 type="text" class="phoneform" maxlength="4"><span class="phonedelimiter">-</span><input id="phone3" name=phone3 type="text" class="phoneform" maxlength="4">
                 <div id="phoneError" class="error"></div>
             </div>
             <div class="area">
                 <label>지역<br>
-                    <select id="area">
+                    <select id="area" name=area>
                         <option selected disabled>지역을 선택하세요</option>
                         <option value="서울">서울</option>
                         <option value="경기">경기</option>
@@ -74,7 +72,7 @@
             </div>
             <div class="gender">
                 <label>성별<br>
-                    <select id="gender">
+                    <select id="gender" name=gender>
                         <option selected disabled>성별을 선택하세요</option>
                         <option value="남성">남성</option>
                         <option value="여성">여성</option>
@@ -82,7 +80,7 @@
                     </select>
                 </label>
                 <div id="genderError" class="error"></div>
-            </div>
+            </div> -->
             <div class="signUp">
                 <input type="submit" id="signUpButton" value="가입하기">
             </div>

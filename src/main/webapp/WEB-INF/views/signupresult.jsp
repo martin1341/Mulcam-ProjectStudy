@@ -8,14 +8,11 @@
 <title>어디갈까?</title>
 <%@ include file="/WEB-INF/views/include/head.jsp"%>
 <!-- CSS, JavaScript -->
-<link href="<%=request.getContextPath()%>/resources/css/signup.css" rel="stylesheet">
-<script src="<%=request.getContextPath()%>/resources/js/signup.js"></script>
+<link href="<%=request.getContextPath()%>/resources/css/signupresult.css" rel="stylesheet">
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/header.jsp"%>
-<c:if test="${result == 1}">
-    <h1>회원가입이 완료되었습니다.</h1>
-</c:if>
+    <div id=result><p>회원가입이 완료되었습니다.</p></div>
     <%@ include file="/WEB-INF/views/include/footer.jsp"%>
 </body>
 </html>

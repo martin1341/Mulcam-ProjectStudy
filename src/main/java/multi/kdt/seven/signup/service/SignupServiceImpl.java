@@ -14,7 +14,6 @@ public class SignupServiceImpl implements SignupService{
 	
 	@Override
 	public int insertmember(SignupDTO dto) {
-		System.out.println(dto.getMembername());
 		return signupdao.insertmember(dto);
 	}
 	
