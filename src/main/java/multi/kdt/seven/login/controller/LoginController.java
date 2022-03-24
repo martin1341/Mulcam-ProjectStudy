@@ -1,5 +1,10 @@
 package multi.kdt.seven.login.controller;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -23,14 +28,30 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)	
-	public String loginresult(MemberDTO dto, Model model) {
+	public String loginresult(MemberDTO dto, Model model, HttpServletRequest request, HttpServletResponse response) {
 		MemberDTO userdto = service.loginmember(dto);
-		
+
 		if(userdto == null) {
-			model.addAttribute("msg", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
+			model.addAttribute("msg", "ÀÏÄ¡ÇÏ´Â Á¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
 			return "login";
 		}else {
+			HttpSession session = request.getSession();
+			session.setAttribute("session_id", userdto.getId());
 			return "index";
 		}
+		
+	}
+	
+	@RequestMapping(value="/logout", method=RequestMethod.GET)	
+	public String logout(MemberDTO dto, Model model, HttpServletRequest request, HttpServletResponse response) {
+		MemberDTO userdto = service.loginmember(dto);
+
+		HttpSession session = request.getSession(false);
+		if(session != null) {
+			session.invalidate();
+		}
+		return "logout";
+		
+		
 	}
 }
