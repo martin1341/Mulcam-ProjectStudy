@@ -9,7 +9,7 @@
 <title>어디갈까?</title>
 <%@ include file="/WEB-INF/views/include/head.jsp"%>
 <!-- CSS, JavaScript -->
-<link href="<%=request.getContextPath()%>/resources/css/articlelist.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/board/articlelist.css" rel="stylesheet">
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/header.jsp"%>
@@ -39,7 +39,7 @@
 		<input type="button" id="writebtn" class="boardbarbtn" value="글쓰기" onclick="location.href='/board/write'">
 		<div id="paginator"></div>
 		<form action="/board">
-			<input type="text" id="searchform" name="q" value="${ param.search }" placeholder="제목으로 검색"><input type="submit" id="searchbtn" class="boardbarbtn" value="검색">
+			<input type="text" id="searchform" name="q" value="${ param.q }" placeholder="제목으로 검색"><input type="submit" id="searchbtn" class="boardbarbtn" value="검색">
 		</form>
 	</section>
 

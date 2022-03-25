@@ -10,8 +10,7 @@
 <title>어디갈까?</title>
 <%@ include file="/WEB-INF/views/include/head.jsp"%>
 <!-- CSS, JavaScript -->
-<link href="<%=request.getContextPath()%>/resources/css/article.css" rel="stylesheet">
-<script src="<%=request.getContextPath()%>/resources/js/aritcle.js"></script>
+<link href="<%=request.getContextPath()%>/resources/css/board/article.css" rel="stylesheet">
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/header.jsp"%>

@@ -7,5 +7,5 @@
 <!-- jQuery -->
 <script src="<%=request.getContextPath()%>/resources/js/jquery-3.6.0.min.js"></script>
 <!-- CSS, JavaScript -->
-<link href="<%=request.getContextPath()%>/resources/css/header.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/resources/css/footer.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/include/header.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/include/footer.css" rel="stylesheet">

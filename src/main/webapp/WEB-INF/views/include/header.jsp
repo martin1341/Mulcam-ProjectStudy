@@ -8,7 +8,7 @@
 		</div>
 		<div id="quick">
 			<ul>
-				<li><a href="/board" onclick="board">모두의 추천</a></li>
+				<li><a href="/board">모두의 추천</a></li>
 			</ul>
 		</div>
 		<div id="member">
