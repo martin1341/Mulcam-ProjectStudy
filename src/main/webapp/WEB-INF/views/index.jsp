@@ -17,9 +17,9 @@
 	<section id="banner">
 		<div id="banner-wrap">
 			<ul>
-				<li><a href="/board/article?id=1"> <img src="resources/img/800_450/busan3_800.jpg">
+				<li><a href="/board/article?id=1"> <img src="resources/img/banner/busan3_800.jpg">
 				</a></li>
-				<li><a href="/board/article?id=5"> <img src="resources/img/800_450/gyeongju_800.jpg">
+				<li><a href="/board/article?id=5"> <img src="resources/img/banner/gyeongju_800.jpg">
 				</a></li>
 			</ul>
 		</div>

@@ -39,6 +39,13 @@ public class BoardDAO {
 		return session.update("updateArticle", dto);
 	}
 	
+<<<<<<< HEAD
+	public int deleteArticle(int articleId) {
+		return session.delete("deleteArticle", articleId);
+	}
+	
+=======
+>>>>>>> 9277de9f4cb46fc3895ceb4cbd25f0e22f7018c9
 	public List<ArticleDTO> selectRecommendArticle() {
 		return session.selectList("selectRecommendArticle");
 	}

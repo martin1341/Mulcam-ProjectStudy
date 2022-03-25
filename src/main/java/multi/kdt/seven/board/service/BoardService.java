@@ -22,4 +22,6 @@ public interface BoardService {
 	
 	public int editArticle(ArticleDTO oldArticle, ArticleDTO newArticle, MultipartFile uploadImage, String uploadPath);
 	
+	public int deleteArticle(int articleId);
+	
 }

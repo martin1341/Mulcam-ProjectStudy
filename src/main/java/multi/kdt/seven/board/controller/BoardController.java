@@ -86,8 +86,9 @@ public class BoardController {
 		ArticleDTO article = service.getArticle(id);
 		if (session_id != null) {
 			if (session_id.equals(article.getArticleAuthor()) || session_id.equals("admin")) {
-				mv.addObject("article", article);
-				mv.setViewName("board/articledelete");
+				mv.addObject("returnURI", "board/article?id=" + id);
+				mv.addObject("id", id);
+				mv.setViewName("board/confirmdelete");
 			} else {
 				mv.addObject("returnURI", "board/delete?id=" + id);
 				mv.setViewName("board/nopermission");
@@ -97,6 +98,14 @@ public class BoardController {
 			mv.setViewName("board/nopermission");
 		}
 
+		return mv;
+	}
+	
+	@PostMapping("/board/delete")
+	public ModelAndView articleDeleteResult(int id) {
+		ModelAndView mv = new ModelAndView();
+		service.deleteArticle(id);
+		mv.setViewName("redirect:/board");
 		return mv;
 	}
 
