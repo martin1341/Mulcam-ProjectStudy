@@ -31,7 +31,7 @@
 			<input type=password id=pw class=textform name=pw placeholder='비밀번호'><br>
 			<div id="passerror" class="errormessage"></div>
 			<input type="submit" id=loginbtn name=submit value="로그인">
-			<input type="hidden" name="returnURL" value="${ returnURL }">
+			<input type="hidden" name="returnURI" value="${ returnURI }">
 		</form>
 	</div>
 

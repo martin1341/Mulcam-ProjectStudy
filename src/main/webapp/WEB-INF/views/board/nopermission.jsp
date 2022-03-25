@@ -12,7 +12,13 @@
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/header.jsp"%>
-    <div id=result><p>권한이 없습니다.</p></div>
+    <div id="result"><p>권한이 없습니다</p></div>
+    <div id="button">
+	    <form action="/login">
+	    	<input type="button" class="btn" id="prevbtn" value="돌아가기" onclick="history.back()"><input type="submit" class="btn" id="loginbtn" value="로그인">
+	    	<input type="hidden" name="returnURI" value="${ returnURI }">
+	    </form>
+    </div>
     <%@ include file="/WEB-INF/views/include/footer.jsp"%>
 </body>
 </html>

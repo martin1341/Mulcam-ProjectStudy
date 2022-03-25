@@ -39,7 +39,7 @@
 		<input type="button" id="writebtn" class="boardbarbtn" value="글쓰기" onclick="location.href='/board/write'">
 		<div id="paginator"></div>
 		<form action="/board">
-			<input type="text" id="searchform" name="search" value="${ param.search }" placeholder="제목으로 검색"><input type="submit" id="searchbtn" class="boardbarbtn" value="검색">
+			<input type="text" id="searchform" name="q" value="${ param.search }" placeholder="제목으로 검색"><input type="submit" id="searchbtn" class="boardbarbtn" value="검색">
 		</form>
 	</section>
 

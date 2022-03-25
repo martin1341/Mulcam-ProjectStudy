@@ -57,6 +57,8 @@ public class BoardServiceImpl implements BoardService {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+		} else {
+			article.setArticleImage("/resources/img/noimage.png");
 		}
 		dao.insertArticle(article);
 		return article.getArticleId();

@@ -25,8 +25,8 @@ public class LoginController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();
-		String returnURL = request.getParameter("returnURL");
-		mv.addObject("returnURL", returnURL);
+		String returnURI = request.getParameter("returnURI");
+		mv.addObject("returnURI", returnURI);
 		mv.setViewName("login");
 		return mv;
 	}
@@ -35,20 +35,20 @@ public class LoginController {
 	public ModelAndView loginresult(MemberDTO dto, HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mv = new ModelAndView();
 		MemberDTO userdto = service.loginmember(dto);
-		String returnURL = (String) request.getParameter("returnURL");
+		String returnURI = (String) request.getParameter("returnURI");
 		if (userdto == null) {
 			mv.addObject("msg", "일치하는 정보가 존재하지 않습니다.");
-			if (!returnURL.equals("")) {
-				mv.addObject("returnURL", returnURL);
+			if (!returnURI.equals("")) {
+				mv.addObject("returnURI", returnURI);
 			}
 			mv.setViewName("login");
 		} else {
 			HttpSession session = request.getSession();
 			session.setAttribute("session_id", userdto.getId());
-			if (returnURL.equals("")) {
+			if (returnURI.equals("")) {
 				mv.setViewName("redirect:/");
 			} else {
-				mv.setViewName("redirect:" + returnURL);
+				mv.setViewName("redirect:" + returnURI);
 			}
 		}
 
