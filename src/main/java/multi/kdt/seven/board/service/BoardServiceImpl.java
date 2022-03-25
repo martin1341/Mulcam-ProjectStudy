@@ -104,4 +104,9 @@ public class BoardServiceImpl implements BoardService {
 		return newArticle.getArticleId();
 	}
 
+	@Override
+	public List<ArticleDTO> recommendArticle() {
+		return dao.selectRecommendArticle();
+	}
+
 }

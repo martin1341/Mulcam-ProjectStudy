@@ -38,5 +38,9 @@ public class BoardDAO {
 	public int editArticle(ArticleDTO dto) {
 		return session.update("updateArticle", dto);
 	}
+	
+	public List<ArticleDTO> selectRecommendArticle() {
+		return session.selectList("selectRecommendArticle");
+	}
 
 }

@@ -32,6 +32,10 @@
 	<select id="selectArticleSearchPage" parameterType="Map" resultType="ArticleDTO">
 		SELECT article_id, article_title, article_author, article_image, article_date, article_views, article_recommends FROM article WHERE article_title LIKE "%${keyword}%" ORDER BY article_id DESC LIMIT #{pageNum}, #{articleNum}
 	</select>
+	<!-- 추천 상위 게시글 6개 핵심 정보 조회 (내림차순) -->
+	<select id="selectRecommendArticle" resultType="ArticleDTO">
+		SELECT article_id, article_title, article_image FROM article ORDER BY article_recommends DESC LIMIT 0, 6
+	</select>
 	
 	
 	<!-- 조회수 증가 -->
