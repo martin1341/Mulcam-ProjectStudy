@@ -109,12 +109,8 @@ public class BoardServiceImpl implements BoardService {
 		return dao.selectRecommendArticle();
 	}
 
-<<<<<<< HEAD
 	@Override
 	public int deleteArticle(int articleId) {
 		return dao.deleteArticle(articleId);
 	}
-
-=======
->>>>>>> 9277de9f4cb46fc3895ceb4cbd25f0e22f7018c9
 }

@@ -100,7 +100,7 @@ public class BoardController {
 
 		return mv;
 	}
-	
+
 	@PostMapping("/board/delete")
 	public ModelAndView articleDeleteResult(int id) {
 		ModelAndView mv = new ModelAndView();
