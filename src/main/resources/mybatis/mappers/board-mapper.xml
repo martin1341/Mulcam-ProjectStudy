@@ -12,7 +12,7 @@
 	</insert>
 	<!-- 게시글 열람 -->
 	<select id="selectArticle" parameterType="int" resultType="ArticleDTO">
-		SELECT * FROM article WHERE article_id=#{articleID}
+		SELECT * FROM article WHERE article_id=#{articleId}
 	</select>
 	<!-- 게시글 수정 -->
 	<update id="updateArticle" parameterType="ArticleDTO">
@@ -20,7 +20,7 @@
 	</update>
 	<!-- 게시글 삭제 -->
 	<delete id="deleteArticle" parameterType="int">
-		DELETE FROM article WHERE article_id=#{articleID}
+		DELETE FROM article WHERE article_id=#{articleId}
 	</delete>
 	
 	
@@ -40,12 +40,18 @@
 	
 	<!-- 조회수 증가 -->
 	<update id="updateViews" parameterType="int">
-		UPDATE article SET article_views=article_views+1 WHERE article_id=#{articleID}
+		UPDATE article SET article_views=article_views+1 WHERE article_id=#{articleId}
 	</update>
 	<!-- 추천수 증가 -->
 	<update id="updateRecommends" parameterType="int">
-		UPDATE article SET article_recommends=article_recommends+1 WHERE article_id=#{articleID}
+		UPDATE article SET article_recommends=article_recommends+1 WHERE article_id=#{articleId}
 	</update>
-	<!--  -->
+	
+	<select id="selectRecommends" parameterType="Map" resultType="Integer">
+		SELECT count(*) FROM recommends WHERE article_id=#{articleId} AND member_id=#{memberId}
+	</select>
+	<insert id="insertRecommends" parameterType="Map">
+		INSERT INTO recommends VALUES(#{articleId}, #{memberId})
+	</insert>
 	
 </mapper>

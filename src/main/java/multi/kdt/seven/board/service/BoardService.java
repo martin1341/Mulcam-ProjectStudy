@@ -24,4 +24,6 @@ public interface BoardService {
 	
 	public int deleteArticle(int articleId);
 	
+	public boolean recommend(int articleId, String memberId);
+	
 }

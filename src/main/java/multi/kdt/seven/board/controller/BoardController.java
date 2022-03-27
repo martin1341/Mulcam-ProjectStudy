@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -139,6 +140,18 @@ public class BoardController {
 		mv.addObject("id", service.editArticle(oldArticle, newArticle, uploadImage, uploadPath));
 		mv.setViewName("redirect:/board/article");
 		return mv;
+	}
+
+	@PostMapping("/board/recommend")
+	@ResponseBody
+	public String recommend(String articleId, String memberId) {
+		if (memberId.equals("")) {
+			return "{\"result\": \"login\"}";
+		} else if (service.recommend(Integer.parseInt(articleId), memberId)) {
+			return "{\"result\": \"true\"}";
+		} else {
+			return "{\"result\": \"false\"}";
+		}
 	}
 
 }
