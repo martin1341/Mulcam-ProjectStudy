@@ -42,7 +42,9 @@
 		<div id="article-wrap">
 			<h1 id="title">${ article.articleTitle }</h1>
 			<div id="article-info">
-				<span>작성자 ${ article.articleAuthor } 조회 ${ article.articleViews }</span><br> <span>작성일 ${ article.articleDate }</span><br>
+				<span>작성자 ${ article.articleAuthor }</span><br>
+				<span>작성일 ${ article.articleDate }</span><br>
+				<span>조회 ${ article.articleViews }</span>
 			</div>
 			<img src="<%=request.getContextPath()%>${ article.articleImage }" width=600>
 			<p id="content">
