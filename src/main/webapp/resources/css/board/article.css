@@ -45,6 +45,10 @@ html, body {
 	text-align: left;
 }
 
+#recommend {
+	margin-bottom: 50px;
+}
+
 #articlebar {
 	width: 800px;
 	height: 50px;
@@ -52,7 +56,7 @@ html, body {
 	margin-bottom: 50px;
 }
 
-#listbtn, #deletebtn, #editbtn {
+#listbtn, #deletebtn, #editbtn, #recommendbtn {
 	width: 100px;
 	height: 50px;
 	background-color: #666673;

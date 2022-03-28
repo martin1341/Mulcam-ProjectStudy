@@ -8,8 +8,8 @@
 <title>어디갈까?</title>
 <%@ include file="/WEB-INF/views/include/head.jsp"%>
 <!-- CSS, JavaScript -->
-<link href="<%=request.getContextPath()%>/resources/css/signup.css" rel="stylesheet">
-<script src="<%=request.getContextPath()%>/resources/js/signup.js"></script>
+<link href="<%=request.getContextPath()%>/resources/css/signup/signup.css" rel="stylesheet">
+<script src="<%=request.getContextPath()%>/resources/js/signup/signup.js"></script>
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/header.jsp"%>

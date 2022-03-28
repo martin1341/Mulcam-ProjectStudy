@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -33,8 +34,8 @@ public class BoardController {
 			show = Integer.parseInt(request.getParameter("show"));
 		}
 
-		if (request.getParameter("search") != null) {
-			String keyword = (String) request.getParameter("search");
+		if (request.getParameter("q") != null) {
+			String keyword = (String) request.getParameter("q");
 			mv.addObject("articles", service.articleSearchPage(keyword, show * (page - 1), show));
 		} else {
 			mv.addObject("articles", service.articlePage(show * (page - 1), show));
@@ -50,7 +51,7 @@ public class BoardController {
 		if (session_id != null) {
 			mv.setViewName("board/articlewrite");
 		} else {
-			mv.addObject("returnURL", "board/write");
+			mv.addObject("returnURI", "board/write");
 			mv.setViewName("redirect:/login");
 		}
 
@@ -84,39 +85,73 @@ public class BoardController {
 		ModelAndView mv = new ModelAndView();
 		String session_id = (String) request.getSession().getAttribute("session_id");
 		ArticleDTO article = service.getArticle(id);
-		if (session_id.equals(article.getArticleAuthor()) || session_id.equals("admin")) {
-			mv.addObject("article", article);
-			mv.setViewName("board/articledelete");
+		if (session_id != null) {
+			if (session_id.equals(article.getArticleAuthor()) || session_id.equals("admin")) {
+				mv.addObject("returnURI", "board/article?id=" + id);
+				mv.addObject("id", id);
+				mv.setViewName("board/confirmdelete");
+			} else {
+				mv.addObject("returnURI", "board/delete?id=" + id);
+				mv.setViewName("board/nopermission");
+			}
 		} else {
+			mv.addObject("returnURI", "board/delete?id=" + id);
 			mv.setViewName("board/nopermission");
 		}
 
 		return mv;
 	}
-	
+
+	@PostMapping("/board/delete")
+	public ModelAndView articleDeleteResult(int id) {
+		ModelAndView mv = new ModelAndView();
+		service.deleteArticle(id);
+		mv.setViewName("redirect:/board");
+		return mv;
+	}
+
 	@GetMapping("/board/edit")
 	public ModelAndView articleEdit(HttpServletRequest request, int id) {
 		ModelAndView mv = new ModelAndView();
 		String session_id = (String) request.getSession().getAttribute("session_id");
 		ArticleDTO article = service.getArticle(id);
-		if (session_id.equals(article.getArticleAuthor()) || session_id.equals("admin")) {
-			mv.addObject("article", article);
-			mv.setViewName("board/articleedit");
+		if (session_id != null) {
+			if (session_id.equals(article.getArticleAuthor()) || session_id.equals("admin")) {
+				mv.addObject("article", article);
+				mv.setViewName("board/articleedit");
+			} else {
+				mv.addObject("returnURI", "board/edit?id=" + id);
+				mv.setViewName("board/nopermission");
+			}
 		} else {
+			mv.addObject("returnURI", "board/edit?id=" + id);
 			mv.setViewName("board/nopermission");
 		}
 
 		return mv;
 	}
-	
+
 	@PostMapping("/board/edit")
-	public ModelAndView articleEditResult(HttpServletRequest request, ArticleDTO newArticle, @RequestParam("uploadImage") MultipartFile uploadImage, int id) {
+	public ModelAndView articleEditResult(HttpServletRequest request, ArticleDTO newArticle, @RequestParam("uploadImage") MultipartFile uploadImage,
+			int id) {
 		ModelAndView mv = new ModelAndView();
 		ArticleDTO oldArticle = service.getArticle(id);
 		String uploadPath = request.getSession().getServletContext().getRealPath("/");
 		mv.addObject("id", service.editArticle(oldArticle, newArticle, uploadImage, uploadPath));
 		mv.setViewName("redirect:/board/article");
 		return mv;
+	}
+
+	@PostMapping("/board/recommend")
+	@ResponseBody
+	public String recommend(String articleId, String memberId) {
+		if (memberId.equals("")) {
+			return "{\"result\": \"login\"}";
+		} else if (service.recommend(Integer.parseInt(articleId), memberId)) {
+			return "{\"result\": \"true\"}";
+		} else {
+			return "{\"result\": \"false\"}";
+		}
 	}
 
 }

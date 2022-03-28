@@ -8,8 +8,8 @@
 <title>어디갈까?</title>
 <%@ include file="/WEB-INF/views/include/head.jsp"%>
 <!-- CSS, JavaScript -->
-<link href="<%=request.getContextPath()%>/resources/css/login.css" rel="stylesheet">
-<script src="<%=request.getContextPath()%>/resources/js/login.js"></script>
+<link href="<%=request.getContextPath()%>/resources/css/login/login.css" rel="stylesheet">
+<script src="<%=request.getContextPath()%>/resources/js/login/login.js"></script>
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/header.jsp"%>
@@ -31,7 +31,7 @@
 			<input type=password id=pw class=textform name=pw placeholder='비밀번호'><br>
 			<div id="passerror" class="errormessage"></div>
 			<input type="submit" id=loginbtn name=submit value="로그인">
-			<input type="hidden" name="returnURL" value="${ returnURL }">
+			<input type="hidden" name="returnURI" value="${ returnURI }">
 		</form>
 	</div>
 

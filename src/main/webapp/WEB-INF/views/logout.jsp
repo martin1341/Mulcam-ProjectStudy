@@ -8,11 +8,14 @@
 <title>어디갈까?</title>
 <%@ include file="/WEB-INF/views/include/head.jsp"%>
 <!-- CSS, JavaScript -->
-<link href="<%=request.getContextPath()%>/resources/css/logout.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/login/logout.css" rel="stylesheet">
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/header.jsp"%>
-    <div id=result><p>로그아웃 되었습니다.</p></div>
+    <div id=result><p>로그아웃 되었습니다</p></div>
+    <div id="button">
+	    	<input type="button" class="btn" id="mainbtn" value="메인으로" onclick="location.href='/'"><input type="button" class="btn" id="loginbtn" value="로그인" onclick="location.href='/login'">
+    </div>
     <%@ include file="/WEB-INF/views/include/footer.jsp"%>
 </body>
 </html>

@@ -24,19 +24,12 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public List<ArticleDTO> articlePage(int pageNum, int articleNum) {
-		Map<String, Object> page = new HashMap<String, Object>();
-		page.put("pageNum", pageNum);
-		page.put("articleNum", articleNum);
-		return dao.selectArticlePage(page);
+		return dao.selectArticlePage(pageNum, articleNum);
 	}
 
 	@Override
 	public List<ArticleDTO> articleSearchPage(String keyword, int pageNum, int articleNum) {
-		Map<String, Object> search = new HashMap<String, Object>();
-		search.put("keyword", keyword);
-		search.put("pageNum", pageNum);
-		search.put("articleNum", articleNum);
-		return dao.selectArticleSearchPage(search);
+		return dao.selectArticleSearchPage(keyword, pageNum, articleNum);
 	}
 
 	@Override
@@ -57,6 +50,8 @@ public class BoardServiceImpl implements BoardService {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+		} else {
+			article.setArticleImage("/resources/img/noimage.png");
 		}
 		dao.insertArticle(article);
 		return article.getArticleId();
@@ -102,4 +97,24 @@ public class BoardServiceImpl implements BoardService {
 		return newArticle.getArticleId();
 	}
 
+	@Override
+	public List<ArticleDTO> recommendArticle() {
+		return dao.selectRecommendArticle();
+	}
+
+	@Override
+	public int deleteArticle(int articleId) {
+		return dao.deleteArticle(articleId);
+	}
+
+	@Override
+	public boolean recommend(int articleId, String memberId) {
+		if(dao.selectRecommends(articleId, memberId) == 0) {
+			dao.insertRecommends(articleId, memberId);
+			dao.updateRecommends(articleId);
+			return true;
+		} else {
+			return false;
+		}
+	}
 }

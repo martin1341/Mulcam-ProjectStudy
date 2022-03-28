@@ -1,93 +1,87 @@
 @charset "UTF-8";
 
 * {
-    margin: 0px;
-    padding: 0px;
+	margin: 0px;
+	padding: 0px;
 }
 
 html, body {
-    overflow-y: overlay;
+	overflow-y: overlay;
 }
 
 /* 본문 */
 .hr-article {
-    border: none;
-    height: 50px;
+	border: none;
+	height: 50px;
 }
 
 #banner {
-    width: 800px;
-    height: 450px;
-    margin: 0 auto;
-    overflow: hidden;
+	width: 800px;
+	height: 450px;
+	margin: 0 auto;
+	overflow: hidden;
 }
 
 #banner ul {
-    width: 3200px;
-    list-style: none;
+	width: 3200px;
+	list-style: none;
 }
 
 #banner li {
-    float: left;
-    margin: 0px;
+	float: left;
+	margin: 0px;
 }
 
 #today {
-    width: 800px;
-    margin: 0 auto;
-    overflow: hidden;
+	width: 800px;
+	margin: 0 auto;
+	overflow: hidden;
 }
 
-#today span {
-    height: 50px;
-    line-height: 50px;
-    font-size: 150%;
-    font-weight: bold;
+#today-title {
+	height: 50px;
+	line-height: 50px;
+	font-size: 150%;
+	font-weight: bold;
 }
 
 #today ul {
-    list-style: none;
+	list-style: none;
 }
 
 #today li {
-    float: left;
-    width: 260px;
-    height: 260px;
-    margin-right: 10px;
+	float: left;
+	width: 260px;
+	height: 240px;
+	margin-right: 10px;
 }
 
 #today li:nth-child(3n) {
-    margin-right: 0px;
+	margin-right: 0px;
 }
 
 #today a {
-    text-decoration: none;
-    color: #444444;
+	text-decoration: none;
+	color: #444444;
 }
 
-.today-image {
-    width: 260px;
-    height: 200px;
-    border-radius: 5%;
-    overflow: hidden;
+.today-image img {
+	width: 260px;
+	height: 200px;
+	border-radius: 5%;
+	overflow: hidden;
 }
 
 .today-content {
-    height: 50px;
+	width: 260px;
+	height: 40px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
-.today-content p {
-    width: 260px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap
-}
-
-.today-content p:first-child {
-    font-weight: bold;
-    font-size: 1.1em;
-}
-
-.today-content p:last-child {
-    color: #999999;
+.today-content span {
+	width: 260px;
+	font-weight: bold;
+	font-size: 1.1em;
 }
